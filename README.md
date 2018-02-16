@@ -21,6 +21,8 @@ ZipArchive is a simple utility class for zipping and unzipping files on iOS, mac
 
 SSZipArchive works on Xcode 7-9 and above, iOS 8-11 and above.
 
+SSZipArchive works on Xcode 7-9 and above, iOS 8-11 and above.
+
 ### CocoaPods
 In your Podfile:  
 `pod 'SSZipArchive'`
