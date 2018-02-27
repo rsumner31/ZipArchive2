@@ -1,0 +1,1945 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-7a12427f1445.css" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-9a96827cb922.css" media="all" rel="stylesheet" />
+  
+  
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-92f236714908.css" media="all" rel="stylesheet" />
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Changed default DPDK log level in tests to 0 by gshimansky · Pull Request #221 · intel-go/nff-go · GitHub</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars0.githubusercontent.com/u/11276794?s=400&amp;v=4" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="Changed default DPDK log level in tests to 0 by gshimansky · Pull Request #221 · intel-go/nff-go" property="og:title" /><meta content="https://github.com/intel-go/nff-go/pull/221" property="og:url" /><meta content="This is possibly a workaround for docker bugs with high output
+applications.
+Docker config via daemon.json made common for Ubuntu and Fedora
+Add 100 to number of failed tests for exit status. It al..." property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="83C5:5598:A7C5F9:141047D:5A9565EA" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_pulls" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="83C5:5598:A7C5F9:141047D:5A9565EA" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" />
+<meta content="https://github.com/hydro_browser_events" name="hydro-events-url" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/pull_requests/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="NzU3YmQxZGQ5YWY5MjMxYTE2NTllNzVlNGNkNzEyNDAzYmE5NGQ4MTQxN2UzZDc5ZTc5ZTJjNGI2M2M1ZDg2MXx7InJlbW90ZV9hZGRyZXNzIjoiMTcyLjU2LjEzLjgyIiwicmVxdWVzdF9pZCI6IjgzQzU6NTU5ODpBN0M1Rjk6MTQxMDQ3RDo1QTk1NjVFQSIsInRpbWVzdGFtcCI6MTUxOTc0MDM5NCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_HERO_CARD_UPLOADER,MARKETPLACE_INSIGHTS,MARKETPLACE_INSIGHTS_CONVERSION_PERCENTAGES">
+
+  <meta name="html-safe-nonce" content="b331435dd4ddf4463624f6d2c6f82d594dd5dcff">
+
+  <meta http-equiv="x-pjax-version" content="f55e36d043c8e7ec099d430ad5ed00ef">
+  
+
+    <style type="text/css" media="screen" id="issue-labels-style">
+  span.labelstyle-ee0701, .linked-labelstyle-ee0701 {  background-color: #ee0701 !important;  color: #ffffff !important;}.labelstyle-ee0701.selected {  background-color: #ee0701 !important;  color: #ffffff !important;}.label-select-menu .labelstyle-ee0701.selected {  background: rgba(238, 7, 1, 0.12) !important;  color: #990400 !important;}
+
+span.labelstyle-cccccc, .linked-labelstyle-cccccc {  background-color: #cccccc !important;  color: #000000 !important;}.labelstyle-cccccc.selected {  background-color: #cccccc !important;  color: #000000 !important;}.label-select-menu .labelstyle-cccccc.selected {  background: rgba(204, 204, 204, 0.12) !important;  color: #999999 !important;}
+
+span.labelstyle-84b6eb, .linked-labelstyle-84b6eb {  background-color: #84b6eb !important;  color: #000000 !important;}.labelstyle-84b6eb.selected {  background-color: #84b6eb !important;  color: #000000 !important;}.label-select-menu .labelstyle-84b6eb.selected {  background: rgba(132, 182, 235, 0.12) !important;  color: #557699 !important;}
+
+span.labelstyle-128A0C, .linked-labelstyle-128A0C {  background-color: #128A0C !important;  color: #ffffff !important;}.labelstyle-128A0C.selected {  background-color: #128A0C !important;  color: #ffffff !important;}.label-select-menu .labelstyle-128A0C.selected {  background: rgba(18, 138, 12, 0.12) !important;  color: #13990d !important;}
+
+span.labelstyle-e6e6e6, .linked-labelstyle-e6e6e6 {  background-color: #e6e6e6 !important;  color: #000000 !important;}.labelstyle-e6e6e6.selected {  background-color: #e6e6e6 !important;  color: #000000 !important;}.label-select-menu .labelstyle-e6e6e6.selected {  background: rgba(230, 230, 230, 0.12) !important;  color: #999999 !important;}
+
+span.labelstyle-cc317c, .linked-labelstyle-cc317c {  background-color: #cc317c !important;  color: #ffffff !important;}.labelstyle-cc317c.selected {  background-color: #cc317c !important;  color: #ffffff !important;}.label-select-menu .labelstyle-cc317c.selected {  background: rgba(204, 49, 124, 0.12) !important;  color: #99245c !important;}
+
+span.labelstyle-ffffff, .linked-labelstyle-ffffff {  background-color: #ffffff !important;  color: #000000 !important;}.labelstyle-ffffff.selected {  background-color: #ffffff !important;  color: #000000 !important;}.label-select-menu .labelstyle-ffffff.selected {  background: rgba(255, 255, 255, 0.12) !important;  color: #999999 !important;}
+</style>
+
+  <link href="https://github.com/intel-go/nff-go/commits/3eed69e2297fd0fa85d474779a52c97e18c9712d.atom" rel="alternate" title="Recent Commits to nff-go:3eed69e2297fd0fa85d474779a52c97e18c9712d" type="application/atom+xml">
+
+  <meta name="description" content="nff-go - NFF-Go -Network Function Framework for GO (former YANFF)">
+  <meta name="go-import" content="github.com/intel-go/nff-go git https://github.com/intel-go/nff-go.git">
+
+  <meta content="14077181" name="octolytics-dimension-user_id" /><meta content="intel-go" name="octolytics-dimension-user_login" /><meta content="86608646" name="octolytics-dimension-repository_id" /><meta content="intel-go/nff-go" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="86608646" name="octolytics-dimension-repository_network_root_id" /><meta content="intel-go/nff-go" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-out env-production">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="px-2 py-4 show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        <header class="Header header-logged-out  position-relative f4 py-3" role="banner">
+  <div class="container-lg d-flex px-3">
+    <div class="d-flex flex-justify-between flex-items-center">
+      <a class="header-logo-invertocat my-0" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+        <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+
+    </div>
+
+    <div class="HeaderMenu HeaderMenu--bright d-flex flex-justify-between flex-auto">
+        <nav class="mt-0">
+          <ul class="d-flex list-style-none">
+              <li class="ml-2">
+                <a href="/features" class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:features" data-selected-links="/features /features/project-management /features/code-review /features/project-management /features/integrations /features">
+                  Features
+</a>              </li>
+              <li class="ml-4">
+                <a href="/business" class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/security /business/customers /business">
+                  Business
+</a>              </li>
+
+              <li class="ml-4">
+                <a href="/explore" class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">
+                  Explore
+</a>              </li>
+
+              <li class="ml-4">
+                    <a href="/marketplace" class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:marketplace" data-selected-links=" /marketplace">
+                      Marketplace
+</a>              </li>
+              <li class="ml-4">
+                <a href="/pricing" class="js-selected-navigation-item HeaderNavlink px-0 py-2 m-0" data-ga-click="Header, click, Nav menu - item:pricing" data-selected-links="/pricing /pricing/developer /pricing/team /pricing/business-hosted /pricing/business-enterprise /pricing">
+                  Pricing
+</a>              </li>
+          </ul>
+        </nav>
+
+      <div class="d-flex">
+          <div class="d-lg-flex flex-items-center mr-3">
+            <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/search" class="js-site-search-form" data-scoped-search-url="/intel-go/nff-go/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/intel-go/nff-go/pull/221" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+          </div>
+
+        <span class="d-inline-block">
+            <div class="HeaderNavlink px-0 py-2 m-0">
+              <a class="text-bold text-white no-underline" href="/login?return_to=%2Fintel-go%2Fnff-go%2Fpull%2F221" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+                <span class="text-gray">or</span>
+                <a class="text-bold text-white no-underline" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+            </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main" class="application-main ">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container >
+      
+
+<!-- base sha1: &quot;886c053c126486ea2b2f553cbd64cd90526a6575&quot; -->
+<!-- head sha1: &quot;3eed69e2297fd0fa85d474779a52c97e18c9712d&quot; -->
+
+
+
+
+  
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+      <a href="/login?return_to=%2Fintel-go%2Fnff-go"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/intel-go/nff-go/watchers"
+     aria-label="28 users are watching this repository">
+    28
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fintel-go%2Fnff-go"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/intel-go/nff-go/stargazers"
+      aria-label="230 users starred this repository">
+      230
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fintel-go%2Fnff-go"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+        Fork
+      </a>
+
+    <a href="/intel-go/nff-go/network" class="social-count"
+       aria-label="24 users forked this repository">
+      24
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/intel-go" class="url fn" rel="author">intel-go</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/intel-go/nff-go" data-pjax="#js-repo-pjax-container">nff-go</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/intel-go/nff-go" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /intel-go/nff-go" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/intel-go/nff-go/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /intel-go/nff-go/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">3</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/intel-go/nff-go/pulls" class="js-selected-navigation-item selected reponav-item" data-hotkey="g p" data-selected-links="repo_pulls checks /intel-go/nff-go/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">2</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/intel-go/nff-go/projects" class="js-selected-navigation-item reponav-item" data-hotkey="g b" data-selected-links="repo_projects new_repo_project repo_project /intel-go/nff-go/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+    <a href="/intel-go/nff-go/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /intel-go/nff-go/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a href="/intel-go/nff-go/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /intel-go/nff-go/pulse">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+
+</nav>
+
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+  <div class="issues-listing" data-pjax>
+    
+      <div class="signup-prompt-bg rounded-1">
+      <div class="signup-prompt p-4 text-center mb-4 rounded-1">
+        <div class="position-relative">
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/site/dismiss_signup_prompt" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7E/ZjfKvfOIAnTdK+bxPQybtti8695ego0Eh+CwA9ExNxxpV7avf05UVeA+3sGpObSJedaCanv7P8T6j2kE/Gg==" /></div>
+            <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
+              Dismiss
+            </button>
+</form>
+          <h3 class="pt-2">Join GitHub today</h3>
+          <p class="col-6 mx-auto">GitHub is home to over 20 million developers working together to host and review code, manage projects, and build software together.</p>
+          <p class="pb-2">
+            <a class="btn btn-blue" href="/join?source=prompt-pr-show" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="clearfix js-issues-results">
+    
+  <div
+    id="partial-discussion-header"
+    class="gh-header js-details-container Details js-socket-channel js-updatable-content pull request"
+    data-channel="pull_request:171091049"
+    data-url="/intel-go/nff-go/pull/221/show_partial?partial=pull_requests%2Ftitle">
+
+  <div class="gh-header-show ">
+      <div class="gh-header-actions">
+
+          <button type="button" data-facebox="#new_issue_modal" class="btn btn-sm btn-primary float-right" data-hotkey="c" aria-haspopup="true" data-ga-click="Issues, create new issue, view:issue_show location:issue_header style:button logged_in:false">New issue</button>
+          <div id="new_issue_modal" style="display:none;">
+  <div class="mt-3 mb-2 text-center">
+    <svg aria-hidden="true" class="octicon octicon-comment-discussion text-blue" height="60" version="1.1" viewBox="0 0 16 16" width="60"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></svg>
+  </div>
+
+  <div class="px-4">
+    <p class="text-center mb-4">
+      <strong>Have a question about this project?</strong> Sign up for a free GitHub account to open an issue and contact its maintainers and the community.
+    </p>
+
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/join?return_to=%2Fintel-go%2Fnff-go%2Fissues%2Fnew" autocomplete="off" class="js-signup-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VOW0WiRsrdkekzP0r55vr2tgR4qZUJWI/bD0yKmCZtbXPMEb2I9jFWNZjesPRZRd4Z8r6OJLvEPCaviRY0+N4A==" /></div>      <dl class="form-group"><dt class="input-label"><label autocapitalize="off" autofocus="autofocus" data-autocheck-authenticity-token="uJDl8T2U1D9iKDq4utP2mR1pOM/94hR+t8YGv3Al86h3D4oggkUcvEEoNmakLBHQMKktLOMqMxK8x55+k0Qasw==" data-autocheck-url="/signup_check/username" data-facebox-id="user-login-issues" for="user_login_issues" name="user[login]">Pick a username</label></dt><dd><input autocapitalize="off" autofocus="autofocus" class="form-control" data-autocheck-authenticity-token="uJDl8T2U1D9iKDq4utP2mR1pOM/94hR+t8YGv3Al86h3D4oggkUcvEEoNmakLBHQMKktLOMqMxK8x55+k0Qasw==" data-autocheck-url="/signup_check/username" data-facebox-id="user-login-issues" id="user_login_issues" name="user[login]" size="30" type="text" /></dd></dl>
+
+      <dl class="form-group"><dt class="input-label"><label autocapitalize="off" data-autocheck-authenticity-token="KNBLcNwt2u5pwpek39fZorbcmTHyDHzixJZ4ryJ4FU03z1BDJ/gc9m5yYO8i3/hlVFfltDSG2Wo4ddPCNOR+cg==" data-autocheck-url="/signup_check/email" data-facebox-id="user-email-issues" for="user_email_issues" name="user[email]">Email Address</label></dt><dd><input autocapitalize="off" class="form-control" data-autocheck-authenticity-token="KNBLcNwt2u5pwpek39fZorbcmTHyDHzixJZ4ryJ4FU03z1BDJ/gc9m5yYO8i3/hlVFfltDSG2Wo4ddPCNOR+cg==" data-autocheck-url="/signup_check/email" data-facebox-id="user-email-issues" id="user_email_issues" name="user[email]" size="30" type="text" /></dd></dl>
+
+      <dl class="form-group"><dt class="input-label"><label data-autocheck-authenticity-token="+jXSKz+TRPrVxloS9Ltu4/tZmJGsKUR0MjWDWtALHfNfEl/qCRrhpHUf3nruvVqm66NGIxdHXiX85p8twrLSFw==" data-autocheck-url="/signup_check/password" data-facebox-id="user-password-issues" for="user_password_issues" name="user[password]">Password</label></dt><dd><input class="form-control" data-autocheck-authenticity-token="+jXSKz+TRPrVxloS9Ltu4/tZmJGsKUR0MjWDWtALHfNfEl/qCRrhpHUf3nruvVqm66NGIxdHXiX85p8twrLSFw==" data-autocheck-url="/signup_check/password" data-facebox-id="user-password-issues" id="user_password_issues" name="user[password]" size="30" type="password" /></dd></dl>
+
+      <input type="hidden" name="source" class="js-signup-source" value="modal-issues">
+      <input class="form-control" id="required_field_e28c" name="required_field_e28c" style="display: none" type="text" />
+<input class="form-control" name="timestamp" type="hidden" value="1519740394829" />
+<input class="form-control" name="timestamp_secret" type="hidden" value="6aff234751224582d7f4d3715d36b38c41b2bcfd6d142a3ba4a55ffc19026c6d" />
+
+
+      <button class="btn btn-primary mt-2 btn-block" type="submit" data-ga-click="(Logged out) New issue modal, clicked Sign up, text:sign-up">Sign up for GitHub</button>
+</form>
+    <p class="mt-4 text-gray text-center">Already on GitHub? <a href="/login?return_to=%2Fintel-go%2Fnff-go%2Fissues%2Fnew" data-ga-click="(Logged out) New issue modal, clicked Sign in, text:sign-in">Sign in</a> to your account</p>
+  </div>
+</div>
+
+      </div>
+
+    <h1 class="gh-header-title">
+      <span class="js-issue-title">
+        Changed default DPDK log level in tests to 0
+      </span>
+      <span class="gh-header-number">#221</span>
+    </h1>
+  </div>
+
+
+  <div class="TableObject gh-header-meta">
+    <div class="TableObject-item">
+        <div class="State State--purple">
+          <svg aria-hidden="true" class="octicon octicon-git-merge" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M10 7c-.73 0-1.38.41-1.73 1.02V8C7.22 7.98 6 7.64 5.14 6.98c-.75-.58-1.5-1.61-1.89-2.44A1.993 1.993 0 0 0 2 .99C.89.99 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2a1.993 1.993 0 0 0 1-3.72V7.67c.67.7 1.44 1.27 2.3 1.69.86.42 2.03.63 2.97.64v-.02c.36.61 1 1.02 1.73 1.02 1.11 0 2-.89 2-2 0-1.11-.89-2-2-2zm-6.8 6c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm8 6c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+          Merged
+        </div>
+    </div>
+    <div class="TableObject-item TableObject-item--primary">
+          <a href="/gshimansky" class="author pull-header-username css-truncate css-truncate-target expandable">
+    gshimansky
+  </a>
+  merged 1 commit into
+
+
+
+  <span class="commit-ref css-truncate user-select-contain expandable " title="intel-go/nff-go:develop"><span class="css-truncate-target">develop</span></span>
+
+from
+
+<span class="commit-ref css-truncate user-select-contain expandable head-ref" title="intel-go/nff-go:gregory/testing"><span class="css-truncate-target">gregory/testing</span></span>
+
+
+  <relative-time datetime="2018-02-23T20:01:26Z">Feb 23, 2018</relative-time>
+
+    </div>
+  </div>
+</div>
+
+
+      
+<div class="tabnav tabnav-pr">
+    <div class="tabnav-extra float-right">
+      <span class="diffstat" id="diffstat">
+        <span class="text-green">
+          +46
+        </span>
+        <span class="text-red">
+          −15
+        </span>
+        <span class="tooltipped tooltipped-s" aria-label="61 lines changed">
+          <span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-deleted"></span><span class="block-diff-neutral"></span>
+        </span>
+      </span>
+    </div>
+
+  <nav class="tabnav-tabs">
+    <a href="/intel-go/nff-go/pull/221" class="tabnav-tab selected js-pjax-history-navigate">
+      <svg aria-hidden="true" class="octicon octicon-comment-discussion" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></svg>
+      Conversation
+
+      <span id="conversation_tab_counter" class="Counter">
+        9
+      </span>
+    </a>
+
+    <a href="/intel-go/nff-go/pull/221/commits" class="tabnav-tab  js-pjax-history-navigate">
+      <svg aria-hidden="true" class="octicon octicon-git-commit" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"/></svg>
+      Commits
+
+      <span id="commits_tab_counter" class="Counter">
+        1
+      </span>
+    </a>
+
+
+      <link rel="pjax-prefetch" href="/intel-go/nff-go/pull/221/files">
+    <a href="/intel-go/nff-go/pull/221/files" class="tabnav-tab  js-pjax-history-navigate">
+      <svg aria-hidden="true" class="octicon octicon-diff" height="16" version="1.1" viewBox="0 0 13 16" width="13"><path fill-rule="evenodd" d="M6 7h2v1H6v2H5V8H3V7h2V5h1v2zm-3 6h5v-1H3v1zM7.5 2L11 5.5V15c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h6.5zM10 6L7 3H1v12h9V6zM8.5 0H3v1h5l4 4v8h1V4.5L8.5 0z"/></svg>
+      Files changed
+
+        <span id="files_tab_counter" class="Counter">
+            10
+        </span>
+    </a>
+  </nav>
+</div>
+
+
+
+    <h2 class="sr-only">Conversation</h2>
+    <div id="discussion_bucket" class="clearfix pull-request-tab-content is-visible" data-hovercard-context="issue:299816287">
+      
+<div class="discussion-sidebar">
+  <div id="partial-discussion-sidebar"
+  class="js-socket-channel js-updatable-content"
+  data-channel="pull_request:171091049"
+  data-url="/intel-go/nff-go/issues/221/show_partial?partial=issues%2Fsidebar">
+
+    <div class="discussion-sidebar-item sidebar-assignee js-discussion-sidebar-item position-relative">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/pull/221/review-requests?pr_global_id=MDExOlB1bGxSZXF1ZXN0MTcxMDkxMDQ5" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="PfKJ+10QQ5YSmepRcbbdP7zZX1r3itq60oFRAQLab8lu3/nrJ/yYM9bDu/kdeMdTgLITIuHxcCa/PaZxOrg9Rg==" /></div>
+    
+
+  <div class="discussion-sidebar-heading text-bold">
+    Reviewers
+  </div>
+
+    <span class="css-truncate">
+
+
+      <p>
+
+          <img alt="@aregm" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/1798344?s=40&amp;v=4" width="20" />
+          <a class="assignee " href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d" >
+
+          <span class="css-truncate-target">
+            aregm
+          </span>
+        </a>
+
+
+        <a href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d">
+            <span class="reviewers-status-icon tooltipped tooltipped-nw float-right d-block text-center" aria-label="aregm approved these changes">
+            <svg aria-hidden="true" class="octicon octicon-check text-green" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+            </span>
+        </a>
+
+      </p>
+
+
+</span>
+
+</form></div>
+
+
+
+  <div class="discussion-sidebar-item sidebar-assignee js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/issues/221?partial=issues%2Fsidebar%2Fshow%2Fassignees" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="ZTb66kvue+GrP8MVhc4YJckBJuXEY7QwIVGw9ZS2gBJjYloezO0IstcK5GF/KZzBlGiO/M8azOEz+1rZ7vHkmQ==" /></div>
+    
+
+  <div class="discussion-sidebar-heading text-bold">
+    Assignees
+  </div>
+
+    <span class="css-truncate">
+    No one assigned
+</span>
+
+</form></div>
+
+  <div class="discussion-sidebar-item sidebar-labels js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/issues/221?partial=issues%2Fsidebar%2Fshow%2Flabels" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="Qti/Xg393gmDbLgnvc5eZ0oD1GQMQ6wxehchRvytPntEjB+qiv6tWv9Zn1NHKdqDF2p8fQc61OBovctqhupa8A==" /></div>
+    <div class="js-issue-labels-container">
+      
+
+  <div class="discussion-sidebar-heading text-bold">
+    Labels
+  </div>
+
+
+    </div>
+    <div aria-live="polite" aria-label="Labels">
+      <div class="labels css-truncate">
+    None yet
+</div>
+
+    </div>
+</form></div>
+
+    <div class="discussion-sidebar-item js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/projects/issues/221" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="6vMo45RQal1C1+QwQ+ajl2+r2RBlY+AD+xC2llhCRpiV4IrSr44bjc6rMO9fWFJD1CWse/nHezDETv+vTT2V/Q==" /></div>
+    
+
+  <div class="discussion-sidebar-heading text-bold">
+    Projects
+  </div>
+
+    
+<span class="css-truncate sidebar-projects">
+    None yet
+</span>
+
+</form></div>
+
+  <div class="discussion-sidebar-item sidebar-milestone js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/issues/221/set_milestone?partial=issues%2Fsidebar%2Fshow%2Fmilestone" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="02/3hO1lHZoFPyBmRIv4GkYmBRnPpEK8qsAUEhebSLveWOVY0HKX6a5kcCEy5rf/ZuZ3g2sTfANaKQ/wNJrEDQ==" /></div>
+    
+
+  <div class="discussion-sidebar-heading text-bold">
+    Milestone
+  </div>
+
+      No milestone
+
+</form></div>
+
+  
+  <div id="partial-users-participants" class="discussion-sidebar-item">
+  <div class="participation">
+
+    <div class="discussion-sidebar-heading text-bold">
+      2 participants
+    </div>
+    <div class="participation-avatars d-flex flex-wrap">
+
+        <div class="position-relative" >
+          <a class="participant-avatar" href="/gshimansky"><img alt="@gshimansky" class="avatar" height="26" src="https://avatars2.githubusercontent.com/u/11276794?s=52&amp;v=4" width="26" /> </a>
+        </div>
+
+        <div class="position-relative" >
+          <a class="participant-avatar" href="/aregm"><img alt="@aregm" class="avatar" height="26" src="https://avatars3.githubusercontent.com/u/1798344?s=52&amp;v=4" width="26" /> </a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+</div>
+
+
+</div>
+
+<div class="discussion-timeline pull-discussion-timeline js-pull-discussion-timeline js-quote-selection-container js-review-state-classes  ">
+  <div class="js-discussion js-socket-channel" data-channel="marked-as-read:pull-request:171091049">
+
+    <div class="timeline-comment-wrapper js-comment-container mt-0">
+      
+
+
+<div class="avatar-parent-child timeline-comment-avatar position-relative" >
+    <a href="/gshimansky">
+      <img alt="@gshimansky" class="avatar rounded-1" height="44" src="https://avatars1.githubusercontent.com/u/11276794?s=88&amp;v=4" width="44" />
+    </a>
+
+</div>
+
+
+      
+  <div id="issue-171091049"
+       class="comment previewable-edit js-comment js-task-list-container timeline-comment  "
+       data-body-version="40cccc14b2880277a14d65104977c6a6">
+
+    
+<div class="timeline-comment-header clearfix">
+  <div class="timeline-comment-actions">
+    
+
+
+
+
+
+
+
+<!-- Closes div if we are showing the kebab menu -->
+
+  </div>
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the nff-go repository.">
+      Contributor
+    </span>
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="/gshimansky" class="author text-inherit">gshimansky</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="#issue-171091049" class="timestamp"><relative-time datetime="2018-02-23T19:01:47Z">Feb 23, 2018</relative-time></a>
+
+
+  </h3>
+</div>
+
+
+    <div class="edit-comment-hide">
+      
+<table class="d-block">
+  <tbody class="d-block">
+    <tr class="d-block">
+      <td class="d-block comment-body markdown-body  js-comment-body">
+          <ul>
+<li>This is possibly a workaround for docker bugs with high output<br>
+applications.</li>
+<li>Docker config via daemon.json made common for Ubuntu and Fedora</li>
+<li>Add 100 to number of failed tests for exit status. It allows quick<br>
+diagnostics of error status in TeamCity.</li>
+</ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+        
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+    </div>
+
+  </div>
+
+    </div>
+
+    
+
+
+  <div id="js-timeline-progressive-loader" data-timeline-item-src="intel-go/nff-go/timeline?id=MDExOlB1bGxSZXF1ZXN0MTcxMDkxMDQ5&amp;variables%5Bafter%5D=Y3Vyc29yOnYyOpPPAAABYcRBjfABqjE0ODk4MzU1MzE%3D&amp;variables%5Bfirst%5D=80" ></div>
+
+
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDE3OlB1bGxSZXF1ZXN0Q29tbWl0MTcxMDkxMDQ5OjNlZWQ2OWUyMjk3ZmQwZmE4NWQ0NzQ3NzlhNTJjOTdlMThjOTcxMmQ=">
+    
+<div class="discussion-item discussion-commits" id="commits-pushed-3eed69e">
+  <div class="discussion-item-body">
+    <div class="timeline-commits ">
+        
+
+<div class="commit js-details-container Details js-socket-channel js-updatable-content no-wrap d-flex mb-2"
+     data-channel="repo:86608646:commit:3eed69e2297fd0fa85d474779a52c97e18c9712d"
+     data-url="/_render_node/MDE3OlB1bGxSZXF1ZXN0Q29tbWl0MTcxMDkxMDQ5OjNlZWQ2OWUyMjk3ZmQwZmE4NWQ0NzQ3NzlhNTJjOTdlMThjOTcxMmQ=/commit/pull_condensed">
+
+  <div class="commit-icon mr-3">
+    <svg aria-hidden="true" class="octicon octicon-git-commit" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"/></svg>
+  </div>
+
+  
+<div class="AvatarStack flex-self-start ">
+  <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1"
+       aria-label="gshimansky">
+
+        <a href="/gshimansky" data-skip-pjax="true" class="avatar">
+          <img src="https://avatars3.githubusercontent.com/u/11276794?s=40&amp;v=4" width="20" height="20" alt="@gshimansky">
+        </a>
+  </div>
+</div>
+
+
+
+  <div class="commit-message pr-1">
+    <code>
+      <a href="/intel-go/nff-go/pull/221/commits/3eed69e2297fd0fa85d474779a52c97e18c9712d" class="message" data-pjax="true" title="Changed default DPDK log level in tests to 0
+
+- This is possibly a workaround for docker bugs with high output
+  applications.
+- Docker config via daemon.json made common for Ubuntu and Fedora
+- Add 100 to number of failed tests for exit status. It allows quick
+  diagnostics of error status in TeamCity.">Changed default DPDK log level in tests to 0</a>
+    </code>
+
+      <span class="hidden-text-expander inline">
+        <button type="button" class="ellipsis-expander js-details-target" aria-expanded="false">&hellip;</button>
+      </span>
+      <div class="commit-desc"><pre>- This is possibly a workaround for docker bugs with high output
+  applications.
+- Docker config via daemon.json made common for Ubuntu and Fedora
+- Add 100 to number of failed tests for exit status. It allows quick
+  diagnostics of error status in TeamCity.</pre></div>
+
+  </div>
+
+  <div class="commit-sig-status text-right pr-1">
+    
+
+  </div>
+
+  <div class="commit-ci-status pr-1">
+      
+    <details class="commit-build-statuses dropdown-details details-reset js-dropdown-details">
+      <summary class="text-green"
+        aria-label="2 / 2 checks OK">
+        <svg aria-hidden="true" class="octicon octicon-check" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+      </summary>
+      <div class="dropdown-menu dropdown-menu-w overflow-hidden">
+        
+  <div class="branch-action-item js-details-container Details
+              
+              branch-action-item-simple">
+
+
+    <div class="">
+
+        <h3 class="h4 status-heading">All checks have passed</h3>
+        <span class="status-meta">2 successful checks</span>
+    </div>
+
+    <div class="merge-status-list">
+        <div class="merge-status-item d-flex flex-items-baseline">
+          <div class="merge-status-icon flex-self-center">
+            <svg aria-hidden="true" class="octicon octicon-check mx-auto d-block text-green" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+          </div>
+
+            <a href="https://travis-ci.org" class="d-inline-block tooltipped tooltipped-e muted-link mr-2 rounded-1" aria-label="Travis CI (@travis-ci) generated this status." style="background-color: #EFF9F9">
+              <img src="/avatars/oauth_app/1508" width="20" height="20" alt="" class="avatar">
+            </a>
+
+          <div class="text-gray col-10 css-truncate css-truncate-target" title="The Travis CI build passed">
+            <strong class="text-emphasized">
+              continuous-integration/travis-ci/pr
+            </strong>
+              — The Travis CI build passed
+          </div>
+
+          <div class="d-flex col-2 flex-shrink-0">
+              <a class="status-actions" href="https://travis-ci.org/intel-go/nff-go/builds/345387214?utm_source=github_status&amp;utm_medium=notification">Details</a>
+          </div>
+        </div>
+        <div class="merge-status-item d-flex flex-items-baseline">
+          <div class="merge-status-icon flex-self-center">
+            <svg aria-hidden="true" class="octicon octicon-check mx-auto d-block text-green" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+          </div>
+
+            <a href="https://travis-ci.org" class="d-inline-block tooltipped tooltipped-e muted-link mr-2 rounded-1" aria-label="Travis CI (@travis-ci) generated this status." style="background-color: #EFF9F9">
+              <img src="/avatars/oauth_app/1508" width="20" height="20" alt="" class="avatar">
+            </a>
+
+          <div class="text-gray col-10 css-truncate css-truncate-target" title="The Travis CI build passed">
+            <strong class="text-emphasized">
+              continuous-integration/travis-ci/push
+            </strong>
+              — The Travis CI build passed
+          </div>
+
+          <div class="d-flex col-2 flex-shrink-0">
+              <a class="status-actions" href="https://travis-ci.org/intel-go/nff-go/builds/345386861?utm_source=github_status&amp;utm_medium=notification">Details</a>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+      </div>
+    </details>
+
+  </div>
+
+  <div class="commit-meta text-right">
+    <code>
+      <a href="/intel-go/nff-go/pull/221/commits/3eed69e2297fd0fa85d474779a52c97e18c9712d" class="commit-id">3eed69e</a>
+    </code>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDIwOlJldmlld1JlcXVlc3RlZEV2ZW50MTQ4OTczMjM5NQ==">
+      <div class="discussion-item discussion-item-review_requested">
+  <h3 class="discussion-item-header f5 text-normal" id="event-1489732395">
+
+    <span class="discussion-item-icon">
+      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    </span>
+
+    
+
+        <img src="https://avatars3.githubusercontent.com/u/11276794?s=32&amp;v=4" alt="@gshimansky" height="16" width="16" class="avatar">
+  <a href="/gshimansky" class="author">gshimansky</a>
+  
+
+
+      
+      requested a review
+    from   
+  <a href="/aregm"><span class="discussion-item-entity">aregm</span></a>
+
+
+
+    <a href="#event-1489732395" class="timestamp"><relative-time datetime="2018-02-23T19:01:57Z">Feb 23, 2018</relative-time></a>
+
+  </h3>
+</div>
+
+
+
+
+</div>
+
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDE3OlB1bGxSZXF1ZXN0UmV2aWV3OTkwMjUzNDk=">
+    
+
+<div class="timeline-comment-wrapper discussion-item-review mt-0
+            is-approved
+            
+            
+            is-writer">
+  <div id="pullrequestreview-99025349" class="timeline-comment js-comment">
+    
+
+
+<div class="avatar-parent-child timeline-comment-avatar position-relative" >
+    <a href="/aregm">
+      <img alt="@aregm" class="avatar rounded-1" height="44" src="https://avatars0.githubusercontent.com/u/1798344?s=88&amp;v=4" width="44" />
+    </a>
+
+</div>
+
+
+    <div class="discussion-item">
+      <h3 class="discussion-item-header f5 text-normal">
+          <div class="discussion-item-icon">
+            <svg aria-hidden="true" class="octicon octicon-check" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+        </div>
+
+        <div class="discussion-item-copy d-inline-block">
+          <strong>
+            
+
+  <a href="/aregm" class="author text-inherit">aregm</a>
+  
+
+          </strong>
+
+            approved these changes
+
+
+          <span class="text-gray">
+              <a href="#pullrequestreview-99025349" class="timestamp">
+                <relative-time datetime="2018-02-23T19:31:13Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </div>
+
+        <div class="float-right">
+
+
+          <a class="btn btn-sm btn-outline" href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d">
+            View changes
+          </a>
+
+
+        </div>
+      </div>
+    </h3>
+
+
+    <div class="edit-comment-hide">
+        <div class="Box review-summary mt-3 mb-4">
+          <div class="Box-body comment-body markdown-body js-comment-body">
+            <p>LGTM with the questions answered.</p>
+          </div>
+        </div>
+    </div>
+
+  </div>
+  
+      
+<div class="discussion-item-body">
+      
+
+<div class="file js-comment-container ">
+  <div class="file-header">
+      <a href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d#diff-da4f8ce6fb0072e393f2134c7aa3f9db" class="file-info link-gray-dark" title="examples/nat/main/nat.go">
+        examples/nat/main/nat.go
+      </a>
+  </div>
+
+  <div class="blob-wrapper border-bottom">
+    <table id="discussion-diff-170344960" class="diff-table">
+      
+
+
+    <tr data-position="0">
+      <td id="discussion-diff-170344960L27" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+      <td id="discussion-diff-170344960R27" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+      <td class="blob-code blob-code-inner blob-code-hunk">@@ -28,6 +28,7 @@ func main() {</td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170344960L28" data-line-number="28"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170344960R28" data-line-number="28"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner"> 	<span class="pl-smi">configFile</span> <span class="pl-k">:=</span> flag.<span class="pl-c1">String</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>config<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>config.json<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Specify config file name<span class="pl-pds">&quot;</span></span>)</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170344960L29" data-line-number="29"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170344960R29" data-line-number="29"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner"> 	flag.<span class="pl-c1">BoolVar</span>(&amp;nat.<span class="pl-smi">CalculateChecksum</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>csum<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Specify whether to calculate checksums in modified packets<span class="pl-pds">&quot;</span></span>)</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170344960L30" data-line-number="30"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170344960R30" data-line-number="30"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner"> 	flag.<span class="pl-c1">BoolVar</span>(&amp;nat.<span class="pl-smi">HWTXChecksum</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>hwcsum<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Specify whether to use hardware offloading for checksums calculation (requires -csum)<span class="pl-pds">&quot;</span></span>)</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td class="blob-num blob-num-addition empty-cell"></td>
+
+        <td id="discussion-diff-170344960R31" data-line-number="31"
+            class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-addition">
+        <span class="blob-code-inner">+	<span class="pl-smi">dpdkLogLevel</span> <span class="pl-k">:=</span> flag.<span class="pl-c1">String</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>dpdk<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>--log-level=0<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Passes an arbitrary argument to dpdk EAL<span class="pl-pds">&quot;</span></span>)</span>
+
+      </td>
+    </tr>
+
+    </table>
+  </div>
+
+  <div class="js-inline-comments-container review-comments">
+    
+  <div class="js-line-comments js-quote-selection-container">
+    <div class="js-comments-holder">
+        
+
+  <div id="discussion_r170344960"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="f03af305e224604c3b207ac287e1702b">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/aregm">
+          <img alt="@aregm" class="avatar" height="28" src="https://avatars3.githubusercontent.com/u/1798344?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/aregm" class="author link-gray-dark">aregm</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170344960" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:31:13Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the nff-go repository.">
+      Owner
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>Better to write "specific" instead of "arbitrary", because that is what you do, you pass a specific argument to EAL.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+        
+
+  <div id="discussion_r170346338"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="2a64081c62c142656beea10ac056240c">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/gshimansky">
+          <img alt="@gshimansky" class="avatar" height="28" src="https://avatars2.githubusercontent.com/u/11276794?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/gshimansky" class="author link-gray-dark">gshimansky</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170346338" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:33:55Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the nff-go repository.">
+      Contributor
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>It is possible to pass a single arbitrary argument to DPDK EAL. The default value "--log-level=0" is specific, but it is possible to change it to anything else, e.g. not related to log level.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+        
+
+  <div id="discussion_r170346904"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="6b521dad5a430e4ebd146d43d5780547">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/aregm">
+          <img alt="@aregm" class="avatar" height="28" src="https://avatars3.githubusercontent.com/u/1798344?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/aregm" class="author link-gray-dark">aregm</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170346904" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:36:06Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the nff-go repository.">
+      Owner
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>Yes, but that is what specific means. Not arbitrary.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+        
+
+  <div id="discussion_r170347623"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="32b21eff450d251fec7ddcca68b5447a">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/gshimansky">
+          <img alt="@gshimansky" class="avatar" height="28" src="https://avatars2.githubusercontent.com/u/11276794?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/gshimansky" class="author link-gray-dark">gshimansky</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170347623" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:38:44Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the nff-go repository.">
+      Contributor
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>Help message explains what this command line switch does. It allows user to pass an arbitrary switch string DPDK:</p>
+<p>-dpdk string<br>
+Passes an arbitrary argument to dpdk EAL (default "--log-level=0")</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    </div>
+
+  </div>
+
+  </div>
+</div>
+
+
+      
+
+<div class="file js-comment-container ">
+  <div class="file-header">
+      <a href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d#diff-e6dc7306f706cc50469e377164fd7af4" class="file-info link-gray-dark" title="test/framework/testsuite.go">
+        test/framework/testsuite.go
+      </a>
+  </div>
+
+  <div class="blob-wrapper border-bottom">
+    <table id="discussion-diff-170345268" class="diff-table">
+      
+
+
+    <tr>
+
+        <td id="discussion-diff-170345268L203" data-line-number="203"
+            class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+        <td class="blob-num blob-num-deletion empty-cell"></td>
+
+      <td class="blob-code blob-code-deletion">
+        <span class="blob-code-inner">-	<span class="pl-k">return</span> failedTests</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td class="blob-num blob-num-addition empty-cell"></td>
+
+        <td id="discussion-diff-170345268R203" data-line-number="203"
+            class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-addition">
+        <span class="blob-code-inner">+</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td class="blob-num blob-num-addition empty-cell"></td>
+
+        <td id="discussion-diff-170345268R204" data-line-number="204"
+            class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-addition">
+        <span class="blob-code-inner">+	<span class="pl-k">if</span> failedTests &gt; <span class="pl-c1">0</span> {</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td class="blob-num blob-num-addition empty-cell"></td>
+
+        <td id="discussion-diff-170345268R205" data-line-number="205"
+            class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-addition">
+        <span class="blob-code-inner">+		<span class="pl-k">return</span> <span class="pl-c1">100</span> + failedTests</span>
+
+      </td>
+    </tr>
+
+    </table>
+  </div>
+
+  <div class="js-inline-comments-container review-comments">
+    
+  <div class="js-line-comments js-quote-selection-container">
+    <div class="js-comments-holder">
+        
+
+  <div id="discussion_r170345268"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="3c4451ce57b762aa07b61fcb3f285e42">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/aregm">
+          <img alt="@aregm" class="avatar" height="28" src="https://avatars3.githubusercontent.com/u/1798344?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/aregm" class="author link-gray-dark">aregm</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170345268" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:31:13Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the nff-go repository.">
+      Owner
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>Why 100 + tests? Is this for CI/CD?</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+        
+
+  <div id="discussion_r170346640"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="9df8b4023a9c08625b6d00a8b7fd6b6b">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/gshimansky">
+          <img alt="@gshimansky" class="avatar" height="28" src="https://avatars2.githubusercontent.com/u/11276794?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/gshimansky" class="author link-gray-dark">gshimansky</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170346640" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:35:06Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the nff-go repository.">
+      Contributor
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>Yes, PR comment explains it. It is to easily distinguish common build/run errors with codes 1-10 from number of failed tests just by looking at the error code.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    </div>
+
+  </div>
+
+  </div>
+</div>
+
+
+      
+
+<div class="file js-comment-container ">
+  <div class="file-header">
+      <a href="/intel-go/nff-go/pull/221/files/3eed69e2297fd0fa85d474779a52c97e18c9712d#diff-a074777439ec279395f24a50b60cf6cb" class="file-info link-gray-dark" title="vagrant/scripts.sh">
+        vagrant/scripts.sh
+      </a>
+  </div>
+
+  <div class="blob-wrapper border-bottom">
+    <table id="discussion-diff-170345574" class="diff-table">
+      
+
+
+    <tr>
+
+        <td id="discussion-diff-170345574L151" data-line-number="151"
+            class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+        <td class="blob-num blob-num-deletion empty-cell"></td>
+
+      <td class="blob-code blob-code-deletion">
+        <span class="blob-code-inner">-<span class="pl-s">{</span></span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L152" data-line-number="152"
+            class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+        <td class="blob-num blob-num-deletion empty-cell"></td>
+
+      <td class="blob-code blob-code-deletion">
+        <span class="blob-code-inner">-<span class="pl-s">    &quot;hosts&quot;: [&quot;unix:///var/run/docker.sock&quot;, &quot;tcp://0.0.0.0:2375&quot;, &quot;fd://&quot;]</span></span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L153" data-line-number="153"
+            class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+        <td class="blob-num blob-num-deletion empty-cell"></td>
+
+      <td class="blob-code blob-code-deletion">
+        <span class="blob-code-inner">-<span class="pl-s">}</span></span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L154" data-line-number="154"
+            class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+        <td class="blob-num blob-num-deletion empty-cell"></td>
+
+      <td class="blob-code blob-code-deletion">
+        <span class="blob-code-inner">-<span class="pl-s">EOF<span class="pl-pds">&#39;</span></span></span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L155" data-line-number="155"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170345574R150" data-line-number="150"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner">     <span class="pl-k">elif</span> [ <span class="pl-smi">$DISTRO</span> <span class="pl-k">==</span> Fedora ]<span class="pl-k">;</span> <span class="pl-k">then</span></span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L156" data-line-number="156"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170345574R151" data-line-number="151"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner">         sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L157" data-line-number="157"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170345574R152" data-line-number="152"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner">         sudo dnf -y install docker-ce</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L158" data-line-number="158"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170345574R153" data-line-number="153"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner">         sudo gpasswd -a vagrant docker</span>
+
+      </td>
+    </tr>
+    <tr>
+
+        <td id="discussion-diff-170345574L159" data-line-number="159"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+        <td id="discussion-diff-170345574R154" data-line-number="154"
+            class="blob-num blob-num-context js-linkable-line-number"></td>
+
+      <td class="blob-code blob-code-context">
+        <span class="blob-code-inner">         sudo firewall-cmd --permanent --add-port=2375/tcp</span>
+
+      </td>
+    </tr>
+
+    </table>
+  </div>
+
+  <div class="js-inline-comments-container review-comments">
+    
+  <div class="js-line-comments js-quote-selection-container">
+    <div class="js-comments-holder">
+        
+
+  <div id="discussion_r170345574"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="2e9feb7217a2cbc8a130b9d1a11b1b55">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/aregm">
+          <img alt="@aregm" class="avatar" height="28" src="https://avatars3.githubusercontent.com/u/1798344?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/aregm" class="author link-gray-dark">aregm</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170345574" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:31:13Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the nff-go repository.">
+      Owner
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>If there is a possibility to parametrize port, will be good.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+        
+
+  <div id="discussion_r170347253"
+      class="review-comment previewable-edit js-comment js-task-list-container
+             
+              "
+      data-body-version="eb9aa8ed4f6caaf32f109992bec5ad9d">
+    <div class="edit-comment-hide">
+      <div class="timeline-comment-actions">
+
+
+
+
+      <!-- Closes div if we are showing the kebab menu -->
+      </div>
+
+
+      <span class="position-relative float-left mt-1" >
+        <a href="/gshimansky">
+          <img alt="@gshimansky" class="avatar" height="28" src="https://avatars2.githubusercontent.com/u/11276794?s=56&amp;v=4" width="28" />
+</a>      </span>
+
+      <div class="review-comment-contents">
+        <h4 class="f5 text-normal d-inline">
+          <strong>
+              <a href="/gshimansky" class="author link-gray-dark">gshimansky</a> 
+          </strong>
+          <span class="text-gray">
+
+              <a href="#discussion_r170347253" class="timestamp d-inline-block">
+                <relative-time datetime="2018-02-23T19:37:19Z">Feb 23, 2018</relative-time>
+              </a>
+
+          </span>
+        </h4>
+        
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the nff-go repository.">
+      Contributor
+    </span>
+
+
+
+
+        <div class="comment-body markdown-body  js-comment-body">
+          <p>We use value 2375 in many other places, e.g. test framework configuration files to run tests. This action is done just once on a target machine, so if it is necessary to change docker daemon port, the user might as well edit this file once.</p>
+        </div>
+
+          
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    </div>
+
+  </div>
+
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+</div>
+</div>
+
+  
+<div class="js-timeline-item js-timeline-progressive-focus-container" data-gid="MDE1OlJlZmVyZW5jZWRFdmVudDE0ODk4MzU1Mjg=">
+      
+
+  <div class="discussion-item discussion-item-merged js-details-container Details">
+  <h3 class="discussion-item-header f5 text-normal" id="event-1489835531">
+
+      <button type="button" class="btn btn-sm btn-outline js-details-target" aria-expanded="false">
+        <span class="discussion-item-toggler-opened">Hide details</span>
+        <span class="discussion-item-toggler-closed">View details</span>
+      </button>
+
+    <span class="discussion-item-icon">
+      <svg aria-hidden="true" class="octicon octicon-git-merge" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M10 7c-.73 0-1.38.41-1.73 1.02V8C7.22 7.98 6 7.64 5.14 6.98c-.75-.58-1.5-1.61-1.89-2.44A1.993 1.993 0 0 0 2 .99C.89.99 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2a1.993 1.993 0 0 0 1-3.72V7.67c.67.7 1.44 1.27 2.3 1.69.86.42 2.03.63 2.97.64v-.02c.36.61 1 1.02 1.73 1.02 1.11 0 2-.89 2-2 0-1.11-.89-2-2-2zm-6.8 6c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm8 6c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+    </span>
+      <img src="https://avatars3.githubusercontent.com/u/11276794?s=32&amp;v=4" alt="@gshimansky" height="16" width="16" class="avatar">
+  <a href="/gshimansky" class="author">gshimansky</a>
+  
+
+
+      merged commit <a href="/intel-go/nff-go/commit/142199761d26dd53398dacc96063db3348de09a9"><code class="discussion-item-entity">1421997</code></a>
+    into
+    <span class="commit-ref user-select-contain">
+      <span class="base-ref" title="intel-go/nff-go:develop">
+        <span class="css-truncate-target">develop</span>
+      </span>
+    </span>
+    <a href="/intel-go/nff-go/pull/221#event-1489835531" class="timestamp"><relative-time datetime="2018-02-23T20:01:26Z">Feb 23, 2018</relative-time></a>
+
+      <div class="discussion-item-footer">
+        2 checks passed
+      </div>
+  </h3>
+
+    <div class="discussion-item-details">
+      <h4 class="discussion-item-details-header">
+        2 checks passed
+      </h4>
+      <div class="merge-status-list">
+          <div class="merge-status-item d-flex flex-items-baseline">
+            <svg aria-hidden="true" class="octicon octicon-check merge-status-icon flex-self-center text-green" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+            <div class="text-gray col-10 mr-3 css-truncate css-truncate-target">
+              <strong class="text-emphasized">
+                continuous-integration/travis-ci/pr
+              </strong>
+              The Travis CI build passed
+            </div>
+
+              <a href="https://travis-ci.org/intel-go/nff-go/builds/345387214?utm_source=github_status&amp;utm_medium=notification" class="ml-2">Details</a>
+          </div>
+          <div class="merge-status-item d-flex flex-items-baseline">
+            <svg aria-hidden="true" class="octicon octicon-check merge-status-icon flex-self-center text-green" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+            <div class="text-gray col-10 mr-3 css-truncate css-truncate-target">
+              <strong class="text-emphasized">
+                continuous-integration/travis-ci/push
+              </strong>
+              The Travis CI build passed
+            </div>
+
+              <a href="https://travis-ci.org/intel-go/nff-go/builds/345386861?utm_source=github_status&amp;utm_medium=notification" class="ml-2">Details</a>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="closed-banner"></div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Rendered timeline since 2018-02-23 12:01:26 -->
+<div id="partial-timeline-marker"
+      class="js-timeline-marker js-socket-channel js-updatable-content"
+      data-channel="pull_request:171091049"
+      data-url="/intel-go/nff-go/pull/221/show_partial?partial=pull_requests%2Ftimeline_marker&amp;since=1519416086"
+      data-last-modified="Fri, 23 Feb 2018 20:01:26 GMT">
+
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/intel-go/nff-go/notifications/mark?ids=306532681" class="d-none js-timeline-marker-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="5GpC2GVI72wWhWjON7hAvNbkrOdSLEH0Z14GS7IwI0Uw2SYOxid60hFj8VF0tMHG08JoF+OIfoUvUQrBvHY2rw==" /></div>
+</form></div>
+
+
+  </div>
+
+  <div class="discussion-timeline-actions">
+          <div class="flash flash-warn mt-3">
+    <a href="/join?source=comment-repo" class="btn btn-primary" rel="nofollow">Sign up for free</a>
+    <strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a href="/login?return_to=https%3A%2F%2Fgithub.com%2Fintel-go%2Fnff-go%2Fpull%2F221" rel="nofollow">Sign in to comment</a>
+</div>
+
+
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2018 <span title="0.76140s from unicorn-824709643-97ph6">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-terms-of-service/" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="footer-octicon" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-1911c1177eb9.js" type="application/javascript"></script>
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-6b2abf76fe60.js" type="application/javascript"></script>
+    
+    <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-0dd021d80ef6.js" type="application/javascript"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+  
+
+  </body>
+</html>
+
