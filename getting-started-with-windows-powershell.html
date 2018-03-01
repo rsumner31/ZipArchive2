@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="no-js hasSidebar hasPageActions hasBreadcrumb " lang="en-us" dir="ltr" >
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Getting Started with Windows PowerShell" />
+	<meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png" />
+
+
+		<meta name="ms.devlang" content="powershell">
+<meta name="ROBOTS" content="INDEX, FOLLOW">
+<meta name="author" content="sdwheeler">
+<meta name="ms.author" content="sewhee">
+<meta name="manager" content="carmonm">
+<meta name="breadcrumb_path" content="/powershell/bread-pscore/toc.json?view=powershell-6">
+<meta name="apiPlatform" content="powershell">
+<meta name="ms.topic" content="reference">
+<meta name="ms.tgt_pltfr" content="windows, macos, linux">
+<meta name="ms.technology" content="powershell">
+<meta name="ms.prod" content="powershell">
+<meta name="uhfHeaderId" content="MSDocsHeader-Powershell">
+<meta name="ms.assetid" content="b0e2ad92-875f-421d-b612-f624e644aa69">
+<meta name="keywords" content="powershell,cmdlet">
+<meta name="ms.date" content="2017-06-05">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="PowerShell_PowerShell-docs_reference">
+<meta name="version" content="0">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="PowerShell">
+<meta name="depot_name" content="PowerShell.PowerShell_PowerShell-docs_reference">
+<meta name="updated_at" content="2017-09-07 12:26 AM">
+<meta name="gitcommit" content="https://github.com/PowerShell/PowerShell-Docs/blob/06d38e49cd85c5730f331344374ae973a0aad74e/reference/docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md">
+<meta name="original_content_git_url" content="https://github.com/PowerShell/PowerShell-Docs/blob/live/reference/docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md">
+<meta name="document_id" content="95c18b6e-e3ee-4f52-22b3-0548a2920c17">
+<meta name="document_version_independent_id" content="052688ad-8c1b-e997-5198-640f3c45fc23">
+<meta name="pagetype" content="Conceptual">
+<meta name="toc_rel" content="../powershell-6/toc.json?view=powershell-6">
+<meta name="word_count" content="232">
+
+<link href="https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell" rel="canonical">
+	<title>Getting Started with Windows PowerShell | Microsoft Docs</title>
+
+	<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/css/159dea8f3c367edcb408.site.css ">
+	<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/css/159dea8f3c367edcb408.conceptual.css ">
+
+	<script>
+	var msDocs = {
+		data:{
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pathToTheme: '/_themes/docs.theme/master/en-us/_themes/',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasComments: true,
+			feedbackSystem: 'LiveFyre',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			contentGitUrl: 'https://github.com/PowerShell/PowerShell-Docs/blob/staging/reference/docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md',
+			forceVersionPicker:false		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/bluebird.min.js"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/fetch.min.js"><\/script>');
+	}
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/js/polyfills/all.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+	<!--<![endif]-->
+	<script>window.jQuery || document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/jquery/jquery-1.12.4.min.js"><\/script>')</script>
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/js/global.min.js?v=335"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+<div class="header-holder">
+		<div id="headerAreaHolder" ms.pgarea="header" data-bi-name="header">
+			<div id="uhfPlaceHolder" class="c-me"></div>
+		</div>
+	<div id="disclaimer-holder" class="disclaimer-holder"></div>
+</div>
+
+	<div class="container mainContainer" ms.pgarea="body" data-bi-name="body">
+		<ul class="breadcrumbs" ms.cmpgrp="breadcrumb" data-bi-name="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb"><li></li></ul>
+
+		<div class="primary-holder">
+
+			<main id="main" role="main" class="content" ms.cmpgrp="content" data-bi-name="content" lang="en-us" dir="ltr">
+
+
+				<h1 id="getting-started-with-windows-powershell" sourcefile="docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md" sourcestartlinenumber="8" sourceendlinenumber="8">Getting Started with Windows PowerShell</h1>
+
+					<ul class="metadata page-metadata" ms.cmpgrp="page info" data-bi-name="page info">
+							<li class="readingTime docon-before docon-clock inline">2 minutes to read</li>
+							<li class="contributors-holder inline">
+								<span class="contributors-text">Contributors</span>
+								<ul class="contributors" ms.cmpgrp="contributors" data-bi-name="contributors">
+											<li><a href="https://github.com/sdwheeler" title="Sean Wheeler" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/sdwheeler.png?size=32" alt="Sean Wheeler"></a></li>
+											<li><a href="https://github.com/juanpablojofre" title="JuanPablo Jofre" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/juanpablojofre.png?size=32" alt="JuanPablo Jofre"></a></li>
+											<li><a href="https://github.com/sankethka" title="sankethka" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/sankethka.png?size=32" alt="sankethka"></a></li>
+								</ul>
+							</li>
+
+					</ul>
+						<nav id="center-doc-outline" class="doc-outline" ms.cmpgrp="intopic toc" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+							<h3>In this article</h3>
+						</nav>
+
+				<!-- <content> -->
+					
+<p>Windows PowerShell is a Windows command-line shell designed especially for system administrators. Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</p>
+<p>Unlike most shells, which accept and return text, Windows PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects. This fundamental change in the environment brings entirely new tools and methods to the management and configuration of Windows.</p>
+<p>Windows PowerShell introduces the concept of a cmdlet (pronounced &quot;command-let&quot;), a simple, single-function command-line tool built into the shell. You can use each cmdlet separately, but their power is realized when you use these simple tools in combination to perform complex tasks. Windows PowerShell includes more than one hundred basic core cmdlets, and you can write your own cmdlets and share them with other users.</p>
+<p>Like many shells, Windows PowerShell gives you access to the file system on the computer. In addition, Windows PowerShell <em>providers</em> enable you to access other data stores, such as the registry and the digital signature certificate stores, as easily as you access the file system.</p>
+<p>This Getting Started guide provides an introduction to Windows PowerShell: the language, the cmdlets, the providers, and the use of objects.</p>
+<p>In this topic:</p>
+<ul>
+<li><p><a href="../setup/windows-powershell-system-requirements?view=powershell-6" data-linktype="relative-path">Windows PowerShell System Requirements</a></p>
+</li>
+<li><p><a href="../setup/installing-windows-powershell?view=powershell-6" data-linktype="relative-path">Installing Windows PowerShell</a></p>
+</li>
+<li><p><a href="../setup/starting-windows-powershell?view=powershell-6" data-linktype="relative-path">Starting Windows PowerShell</a></p>
+</li>
+<li><p><a href="getting-ready-to-use-windows-powershell?view=powershell-6" data-linktype="relative-path">Getting Ready to Use Windows PowerShell</a></p>
+</li>
+</ul>
+
+				<!-- </content> -->
+
+
+			</main>
+
+
+						<div class="note alert">
+							<p>Note</p>
+							<p>The feedback system for this content will be changing soon. Old comments will not be carried over. If content within a comment thread is important to you, please save a copy. For more information on the upcoming change, <a href="https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs">we invite you to read our blog post</a>.</p>
+						</div>
+					<div id="comments-container" ms.cmpgrp="comments" data-bi-name="comments" role="form"></div>
+		</div>
+
+		<div class="pageActions">
+			<div id="page-actions" ms.cmpgrp="pageactions" data-bi-name="pageactions" role="complementary">
+				<div id="page-actions-content">
+					<ul class="action-list">
+							<li>
+									<a href="#comments-container" id="comments-link" ms.cmpnm="comments" data-bi-name="comments">
+										<i class="docon docon-comment-lines" aria-hidden="true"></i>Feedback									</a>
+							</li>
+									<li id="contenteditbtn">
+										<a href="https://github.com/PowerShell/PowerShell-Docs/blob/staging/reference/docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md" title="Edit This Document" ms.cmpnm="edit" data-bi-name="edit">
+											<i class="icon icon-editor"></i>Edit										</a>
+									</li>
+						<li>
+							<div class="sharing dropdown has-caret">
+								<a href="#" class="dropdown-trigger" aria-haspopup="true" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" ms.cmpnm="share" data-bi-name="share">
+									<i class="icon icon-share"></i>Share								</a>
+								<div class="dropdown-menu" role="menu">
+									<ul>
+										<li><a class="share-twitter" ms.cmpnm="twitter" data-bi-name="twitter"><i class="icon icon-twitter"></i>Twitter</a></li>
+										<li><a class="share-linkedin" ms.cmpnm="share-linkedin" data-bi-name="linkedin"><i class="icon icon-linkedin"></i>LinkedIn</a></li>
+										<li><a class="share-facebook" ms.cmpnm="facebook" data-bi-name="facebook"><i class="icon icon-facebook"></i>Facebook</a></li>
+										<li><a class="share-email" ms.cmpnm="email" data-bi-name="email"><i class="icon icon-email"></i>Email</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="typeSep">|</li>
+						<li>
+							<label for="theme-selector">Theme</label>
+							<select id="theme-selector" data-bi-name="select-theme">
+								<option value="" class="removedOnload"></option>
+								<option value="">Light</option>
+								<option value="theme_night">Dark</option>
+							</select>
+						</li>
+					</ul>
+
+						<nav id="side-doc-outline" class="doc-outline" ms.cmpnm="intopic toc" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+							<h3>In this article</h3>
+						</nav>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="sidebar" id="sidebar" ms.cmpgrp="left toc" data-bi-name="left toc" role="navigation" aria-label="Main Navigation">
+			<div id="sidebarContent">
+				<div class="filterHolder">
+				</div>
+				<nav class="toc"></nav>
+				<div class="pdfDownloadHolder"></div>
+			</div>
+			<div class="tocSpace"></div>
+		</div>
+
+		<div id="menu-nav" class="dropdown-container">
+			<div class="dropdown dropdown-full mobilenavi">
+					<select>
+					</select>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="container footerContainer" >
+<footer id="footer" ms.pgarea="footer" data-bi-name="footer" class="footer-layout">
+  <div class="container" role="contentinfo">
+
+    <a data-mscc-ic="false" id="locale-selector-link" href="#" data-bi-name="select-locale" ms.cmpnm="select-locale"></a>
+
+    <ul class="links" ms.cmpgrp="footerlinks" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" ms.cmpnm="bloglink" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="//docs.microsoft.com/contribute" ms.cmpnm="contributorGuide" data-bi-name="contributorGuide">How to contribute</a></li>
+		<li><a data-mscc-ic="false" href="//privacy.microsoft.com/en-us/" ms.cmpnm="privacy" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="/en-us/legal/termsofuse" ms.cmpnm="termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="//aka.ms/sitefeedback" ms.cmpnm="feedback" data-bi-name="feedback">Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" ms.cmpnm="trademarks" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+  </div>
+</footer>	</div>
+
+</body>
+</html>
