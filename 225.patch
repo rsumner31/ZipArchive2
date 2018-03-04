@@ -1,0 +1,426 @@
+From b20eeb739360974a4e302639f9f58296c54d2c87 Mon Sep 17 00:00:00 2001
+From: "Filippov, Ilia" <ilia.filippov@intel.com>
+Date: Fri, 2 Mar 2018 12:21:13 -0700
+Subject: [PATCH] Affinity fixes
+
+1) Affinity for "Stop" flow function should be set in C code - fix this
+2) core is "int" in GO, CPU_SET and DPDK - make it "int" everywhere
+---
+ common/common.go       | 24 ++++++++++++------------
+ common/common_test.go  | 42 +++++++++++++++++++++---------------------
+ flow/flow.go           | 16 ++++++++--------
+ low/low.go             | 16 ++++++++--------
+ low/low.h              | 12 +++++++-----
+ scheduler/scheduler.go | 25 +++++++++++--------------
+ 6 files changed, 67 insertions(+), 68 deletions(-)
+
+diff --git a/common/common.go b/common/common.go
+index 4d2dd63..b3c1a10 100644
+--- a/common/common.go
++++ b/common/common.go
+@@ -306,9 +306,9 @@ func GetDPDKLogLevel() string {
+ }
+ 
+ // GetDefaultCPUs returns default core list {0, 1, ..., NumCPU}
+-func GetDefaultCPUs(cpuNumber uint) []uint {
+-	cpus := make([]uint, cpuNumber, cpuNumber)
+-	for i := uint(0); i < cpuNumber; i++ {
++func GetDefaultCPUs(cpuNumber int) []int {
++	cpus := make([]int, cpuNumber, cpuNumber)
++	for i := 0; i < cpuNumber; i++ {
+ 		cpus[i] = i
+ 	}
+ 	return cpus
+@@ -316,7 +316,7 @@ func GetDefaultCPUs(cpuNumber uint) []uint {
+ 
+ // HandleCPUs parses cpu list string into array of valid core numbers.
+ // Removes duplicates
+-func HandleCPUList(s string, maxcpu uint) ([]uint, error) {
++func HandleCPUList(s string, maxcpu int) ([]int, error) {
+ 	nums, err := parseCPUs(s)
+ 	nums = removeDuplicates(nums)
+ 	nums = dropInvalidCPUs(nums, maxcpu)
+@@ -324,9 +324,9 @@ func HandleCPUList(s string, maxcpu uint) ([]uint, error) {
+ }
+ 
+ // parseCPUs parses cpu list string into array of cpu numbers
+-func parseCPUs(s string) ([]uint, error) {
++func parseCPUs(s string) ([]int, error) {
+ 	var startRange, k int
+-	nums := make([]uint, 0, 256)
++	nums := make([]int, 0, 256)
+ 	if s == "" {
+ 		return nums, nil
+ 	}
+@@ -351,11 +351,11 @@ func parseCPUs(s string) ([]uint, error) {
+ 					return nums, WrapWithNFError(nil, "CPU range is invalid, min should not exceed max", InvalidCPURangeErr)
+ 				}
+ 				for k = startRange; k <= r; k++ {
+-					nums = append(nums, uint(k))
++					nums = append(nums, k)
+ 				}
+ 				startRange = -1
+ 			} else {
+-				nums = append(nums, uint(r))
++				nums = append(nums, r)
+ 			}
+ 			if i == len(s) {
+ 				break
+@@ -366,9 +366,9 @@ func parseCPUs(s string) ([]uint, error) {
+ 	return nums, nil
+ }
+ 
+-func removeDuplicates(array []uint) []uint {
+-	result := []uint{}
+-	seen := map[uint]bool{}
++func removeDuplicates(array []int) []int {
++	result := []int{}
++	seen := map[int]bool{}
+ 	for _, val := range array {
+ 		if _, ok := seen[val]; !ok {
+ 			result = append(result, val)
+@@ -380,7 +380,7 @@ func removeDuplicates(array []uint) []uint {
+ 
+ // dropInvalidCPUs validates cpu list. Takes array of cpu ids and checks it is < maxcpu on machine,
+ // invalid are excluded. Returns list of valid cpu ids.
+-func dropInvalidCPUs(nums []uint, maxcpu uint) []uint {
++func dropInvalidCPUs(nums []int, maxcpu int) []int {
+ 	i := 0
+ 	for _, x := range nums {
+ 		if x < maxcpu {
+diff --git a/common/common_test.go b/common/common_test.go
+index 8b985e8..3d9721b 100644
+--- a/common/common_test.go
++++ b/common/common_test.go
+@@ -16,17 +16,17 @@ var invalidCpuRangeErr = WrapWithNFError(nil, "CPU range is invalid, min should
+ 
+ var cpuParseTests = []struct {
+ 	line        string // input
+-	expected    []uint // expected result
++	expected    []int  // expected result
+ 	expectedErr error
+ }{
+-	{"", []uint{}, nil},
+-	{"1-5", []uint{1, 2, 3, 4, 5}, nil},
+-	{"1,10-13,9", []uint{1, 10, 11, 12, 13, 9}, nil},
+-	{"10-14,13-15", []uint{10, 11, 12, 13, 14, 13, 14, 15}, nil},
+-	{"1-3,6-", []uint{1, 2, 3}, &strconv.NumError{"Atoi", "", strconv.ErrSyntax}},
+-	{"-1", []uint{}, &strconv.NumError{"Atoi", "", strconv.ErrSyntax}},
+-	{"10-6", []uint{}, GetNFError(invalidCpuRangeErr)},
+-	{"1-3,10-6", []uint{1, 2, 3}, GetNFError(invalidCpuRangeErr)},
++	{"", []int{}, nil},
++	{"1-5", []int{1, 2, 3, 4, 5}, nil},
++	{"1,10-13,9", []int{1, 10, 11, 12, 13, 9}, nil},
++	{"10-14,13-15", []int{10, 11, 12, 13, 14, 13, 14, 15}, nil},
++	{"1-3,6-", []int{1, 2, 3}, &strconv.NumError{"Atoi", "", strconv.ErrSyntax}},
++	{"-1", []int{}, &strconv.NumError{"Atoi", "", strconv.ErrSyntax}},
++	{"10-6", []int{}, GetNFError(invalidCpuRangeErr)},
++	{"1-3,10-6", []int{1, 2, 3}, GetNFError(invalidCpuRangeErr)},
+ }
+ 
+ func TestParseCPUs(t *testing.T) {
+@@ -43,13 +43,13 @@ func TestParseCPUs(t *testing.T) {
+ }
+ 
+ var dropInvalidCPUsTests = []struct {
+-	cpus     []uint
+-	maxcpu   uint
+-	expected []uint // expected valid cpu list
++	cpus     []int
++	maxcpu   int
++	expected []int // expected valid cpu list
+ }{
+-	{[]uint{}, 20, []uint{}},
+-	{[]uint{1, 2, 100, 1, 2, 100}, 20, []uint{1, 2, 1, 2}},
+-	{[]uint{1, 2, 100, 100, 2, 100}, 20, []uint{1, 2, 2}},
++	{[]int{}, 20, []int{}},
++	{[]int{1, 2, 100, 1, 2, 100}, 20, []int{1, 2, 1, 2}},
++	{[]int{1, 2, 100, 100, 2, 100}, 20, []int{1, 2, 2}},
+ }
+ 
+ func TestDropInvalidCPUs(t *testing.T) {
+@@ -62,13 +62,13 @@ func TestDropInvalidCPUs(t *testing.T) {
+ }
+ 
+ var removeDuplicatesTests = []struct {
+-	cpus     []uint
+-	expected []uint
++	cpus     []int
++	expected []int
+ }{
+-	{[]uint{}, []uint{}},
+-	{[]uint{1, 2, 100, 100, 2, 100}, []uint{1, 2, 100}},
+-	{[]uint{1, 2, 100, 3}, []uint{1, 2, 100, 3}},
+-	{[]uint{1, 2, 1, 100, 100, 3}, []uint{1, 2, 100, 3}},
++	{[]int{}, []int{}},
++	{[]int{1, 2, 100, 100, 2, 100}, []int{1, 2, 100}},
++	{[]int{1, 2, 100, 3}, []int{1, 2, 100, 3}},
++	{[]int{1, 2, 1, 100, 100, 3}, []int{1, 2, 100, 3}},
+ }
+ 
+ func TestRemoveDuplicates(t *testing.T) {
+diff --git a/flow/flow.go b/flow/flow.go
+index 612630d..f285a46 100644
+--- a/flow/flow.go
++++ b/flow/flow.go
+@@ -342,8 +342,8 @@ type Config struct {
+ // SystemInit is initialization of system. This function should be always called before graph construction.
+ // Function can panic during execution.
+ func SystemInit(args *Config) error {
+-	CPUCoresNumber := uint(runtime.NumCPU())
+-	var cpus []uint
++	CPUCoresNumber := runtime.NumCPU()
++	var cpus []int
+ 	var err error
+ 	if args.CPUList != "" {
+ 		if cpus, err = common.HandleCPUList(args.CPUList, CPUCoresNumber); err != nil {
+@@ -846,12 +846,12 @@ func GetPortMACAddress(port uint8) [common.EtherAddrLen]uint8 {
+ 	return low.GetPortMACAddress(port)
+ }
+ 
+-func receive(parameters interface{}, coreID uint8) {
++func receive(parameters interface{}, coreID int) {
+ 	srp := parameters.(*receiveParameters)
+ 	low.Receive(srp.port, srp.queue, srp.out, coreID)
+ }
+ 
+-func generateOne(parameters interface{}, core uint8) {
++func generateOne(parameters interface{}, core int) {
+ 	gp := parameters.(*generateParameters)
+ 	OUT := gp.out
+ 	generateFunction := gp.generateFunction
+@@ -998,7 +998,7 @@ func pcopy(parameters interface{}, stopper chan int, report chan uint64, context
+ 	}
+ }
+ 
+-func send(parameters interface{}, coreID uint8) {
++func send(parameters interface{}, coreID int) {
+ 	srp := parameters.(*sendParameters)
+ 	low.Send(srp.port, srp.queue, srp.in, coreID)
+ }
+@@ -1175,7 +1175,7 @@ func separate(parameters interface{}, stopper chan int, report chan uint64, cont
+ 	}
+ }
+ 
+-func partition(parameters interface{}, core uint8) {
++func partition(parameters interface{}, core int) {
+ 	cp := parameters.(*partitionParameters)
+ 	IN := cp.in
+ 	OUTFirst := cp.outFirst
+@@ -1379,7 +1379,7 @@ func handle(parameters interface{}, stopper chan int, report chan uint64, contex
+ 	}
+ }
+ 
+-func write(parameters interface{}, coreID uint8) {
++func write(parameters interface{}, coreID int) {
+ 	wp := parameters.(*writeParameters)
+ 	IN := wp.in
+ 	filename := wp.filename
+@@ -1411,7 +1411,7 @@ func write(parameters interface{}, coreID uint8) {
+ 	}
+ }
+ 
+-func read(parameters interface{}, coreID uint8) {
++func read(parameters interface{}, coreID int) {
+ 	rp := parameters.(*readParameters)
+ 	OUT := rp.out
+ 	filename := rp.filename
+diff --git a/low/low.go b/low/low.go
+index 702a993..2d610fa 100644
+--- a/low/low.go
++++ b/low/low.go
+@@ -430,26 +430,26 @@ func (ring *Ring) GetRingCount() uint32 {
+ }
+ 
+ // Receive - get packets and enqueue on a Ring.
+-func Receive(port uint8, queue int16, OUT *Ring, coreID uint8) {
++func Receive(port uint8, queue int16, OUT *Ring, coreID int) {
+ 	t := C.rte_eth_dev_socket_id(C.uint8_t(port))
+ 	if t != C.int(C.rte_lcore_to_socket_id(C.uint(coreID))) {
+ 		common.LogWarning(common.Initialization, "Receive port", port, "is on remote NUMA node to polling thread - not optimal performance.")
+ 	}
+-	C.nff_go_recv(C.uint8_t(port), C.int16_t(queue), OUT.DPDK_ring, C.uint8_t(coreID))
++	C.nff_go_recv(C.uint8_t(port), C.int16_t(queue), OUT.DPDK_ring, C.int(coreID))
+ }
+ 
+ // Send - dequeue packets and send.
+-func Send(port uint8, queue int16, IN *Ring, coreID uint8) {
++func Send(port uint8, queue int16, IN *Ring, coreID int) {
+ 	t := C.rte_eth_dev_socket_id(C.uint8_t(port))
+ 	if t != C.int(C.rte_lcore_to_socket_id(C.uint(coreID))) {
+ 		common.LogWarning(common.Initialization, "Send port", port, "is on remote NUMA node to polling thread - not optimal performance.")
+ 	}
+-	C.nff_go_send(C.uint8_t(port), C.int16_t(queue), IN.DPDK_ring, C.uint8_t(coreID))
++	C.nff_go_send(C.uint8_t(port), C.int16_t(queue), IN.DPDK_ring, C.int(coreID))
+ }
+ 
+ // Stop - dequeue and free packets.
+-func Stop(IN *Ring) {
+-	C.nff_go_stop(IN.DPDK_ring)
++func Stop(IN *Ring, coreID int) {
++	C.nff_go_stop(IN.DPDK_ring, C.int(coreID))
+ }
+ 
+ // InitDPDKArguments allocates and initializes arguments for dpdk.
+@@ -507,13 +507,13 @@ func CreateMempool() *Mempool {
+ }
+ 
+ // SetAffinity sets cpu affinity mask.
+-func SetAffinity(coreID uint8) error {
++func SetAffinity(coreID int) error {
+ 	// go tool trace shows that each proc executes different goroutine. However it is expected behavior
+ 	// (golang issue #20853) and each goroutine is locked to one OS thread.
+ 	runtime.LockOSThread()
+ 
+ 	var cpuset C.cpu_set_t
+-	C.initCPUSet(C.uint8_t(coreID), &cpuset)
++	C.initCPUSet(C.int(coreID), &cpuset)
+ 	_, _, errno := syscall.RawSyscall(syscall.SYS_SCHED_SETAFFINITY, uintptr(0), unsafe.Sizeof(cpuset), uintptr(unsafe.Pointer(&cpuset)))
+ 	if errno != 0 {
+ 		return common.WrapWithNFError(nil, errno.Error(), common.SetAffinityErr)
+diff --git a/low/low.h b/low/low.h
+index 2a72ac1..2bf6834 100644
+--- a/low/low.h
++++ b/low/low.h
+@@ -67,12 +67,12 @@ static int kni_config_network_interface(uint8_t port_id, uint8_t if_up);
+ 
+ uint32_t BURST_SIZE;
+ 
+-void initCPUSet(uint8_t coreId, cpu_set_t* cpuset) {
++void initCPUSet(int coreId, cpu_set_t* cpuset) {
+ 	CPU_ZERO(cpuset);
+ 	CPU_SET(coreId, cpuset);
+ }
+ 
+-void setAffinity(uint8_t coreId) {
++void setAffinity(int coreId) {
+ 	cpu_set_t cpuset;
+ 	CPU_ZERO(&cpuset);
+ 	CPU_SET(coreId, &cpuset);
+@@ -212,7 +212,7 @@ struct rte_mbuf* reassemble(struct rte_ip_frag_tbl* tbl, struct rte_mbuf *buf, s
+ 	return buf;
+ }
+ 
+-void nff_go_recv(uint8_t port, int16_t queue, struct rte_ring *out_ring, uint8_t coreId) {
++void nff_go_recv(uint8_t port, int16_t queue, struct rte_ring *out_ring, int coreId) {
+ 	setAffinity(coreId);
+ 
+ 	struct rte_mbuf *bufs[BURST_SIZE];
+@@ -284,7 +284,7 @@ void nff_go_recv(uint8_t port, int16_t queue, struct rte_ring *out_ring, uint8_t
+ 	}
+ }
+ 
+-void nff_go_send(uint8_t port, int16_t queue, struct rte_ring *in_ring, uint8_t coreId) {
++void nff_go_send(uint8_t port, int16_t queue, struct rte_ring *in_ring, int coreId) {
+ 	setAffinity(coreId);
+ 
+ 	struct rte_mbuf *bufs[BURST_SIZE];
+@@ -317,7 +317,9 @@ void nff_go_send(uint8_t port, int16_t queue, struct rte_ring *in_ring, uint8_t
+ 	}
+ }
+ 
+-void nff_go_stop(struct rte_ring *in_ring) {
++void nff_go_stop(struct rte_ring *in_ring, int coreId) {
++	setAffinity(coreId);
++
+ 	struct rte_mbuf *bufs[BURST_SIZE];
+ 	uint16_t buf;
+ 	// Run until the application is quit. Stop can't be stopped now.
+diff --git a/scheduler/scheduler.go b/scheduler/scheduler.go
+index bdcb7cd..34c6e0c 100644
+--- a/scheduler/scheduler.go
++++ b/scheduler/scheduler.go
+@@ -32,7 +32,7 @@ type UserContext interface {
+ }
+ 
+ // Function types which are used inside flow functions
+-type uncloneFlowFunction func(interface{}, uint8)
++type uncloneFlowFunction func(interface{}, int)
+ type cloneFlowFunction func(interface{}, chan int, chan uint64, UserContext)
+ type conditionFlowFunction func(interface{}, bool) int
+ 
+@@ -104,12 +104,12 @@ type Scheduler struct {
+ }
+ 
+ type core struct {
+-	id     uint
++	id     int
+ 	isfree bool
+ }
+ 
+ // NewScheduler is a function for creation new scheduler. Is used inside flow package
+-func NewScheduler(cpus []uint, schedulerOff bool, schedulerOffRemove bool,
++func NewScheduler(cpus []int, schedulerOff bool, schedulerOffRemove bool,
+ 	stopDedicatedCore bool, stopRing *low.Ring, checkTime uint, debugTime uint) Scheduler {
+ 	coresNumber := len(cpus)
+ 	// Init scheduler
+@@ -132,12 +132,12 @@ func NewScheduler(cpus []uint, schedulerOff bool, schedulerOffRemove bool,
+ 
+ // SystemStart starts whole system. Is used inside flow package
+ func (scheduler *Scheduler) SystemStart() (err error) {
+-	var core uint
++	var core int
+ 	if core, err = scheduler.getCore(); err != nil {
+ 		return err
+ 	}
+ 	common.LogDebug(common.Initialization, "Start SCHEDULER at", core, "core")
+-	if err = low.SetAffinity(uint8(core)); err != nil {
++	if err = low.SetAffinity(core); err != nil {
+ 		common.LogFatal(common.Initialization, "Failed to set affinity to", core, "core: ", err)
+ 	}
+ 	if scheduler.stopDedicatedCore {
+@@ -149,10 +149,7 @@ func (scheduler *Scheduler) SystemStart() (err error) {
+ 		common.LogDebug(common.Initialization, "Start STOP at scheduler", core, "core")
+ 	}
+ 	go func() {
+-		if err = low.SetAffinity(uint8(core)); err != nil {
+-			common.LogFatal(common.Initialization, "Failed to set affinity to", core, "core: ", err)
+-		}
+-		low.Stop(scheduler.StopRing)
++		low.Stop(scheduler.StopRing, core)
+ 	}()
+ 	for i := range scheduler.UnClonable {
+ 		if core, err = scheduler.getCore(); err != nil {
+@@ -161,7 +158,7 @@ func (scheduler *Scheduler) SystemStart() (err error) {
+ 		ff := scheduler.UnClonable[i]
+ 		common.LogDebug(common.Initialization, "Start unclonable FlowFunction", ff.name, "at", core, "core")
+ 		go func() {
+-			ff.uncloneFunction(ff.Parameters, uint8(core))
++			ff.uncloneFunction(ff.Parameters, core)
+ 		}()
+ 	}
+ 	for i := range scheduler.Clonable {
+@@ -180,13 +177,13 @@ func (scheduler *Scheduler) SystemStart() (err error) {
+ }
+ 
+ func (scheduler *Scheduler) startClonable(ff *FlowFunction) (err error) {
+-	var core uint
++	var core int
+ 	if core, err = scheduler.getCore(); err != nil {
+ 		return err
+ 	}
+ 	common.LogDebug(common.Initialization, "Start clonable FlowFunction", ff.name, "at", core, "core")
+ 	go func() {
+-		if err := low.SetAffinity(uint8(core)); err != nil {
++		if err := low.SetAffinity(core); err != nil {
+ 			common.LogFatal(common.Initialization, "Failed to set affinity to", core, "core: ", err)
+ 		}
+ 		ff.channel = make(chan int)
+@@ -328,7 +325,7 @@ func (scheduler *Scheduler) startClone(ff *FlowFunction) bool {
+ 	ff.clone = append(ff.clone, cp)
+ 	ff.cloneNumber++
+ 	go func() {
+-		err := low.SetAffinity(uint8(core))
++		err := low.SetAffinity(core)
+ 		if err != nil {
+ 			common.LogFatal(common.Debug, "Failed to set affinity to", core, "core: ", err)
+ 		}
+@@ -408,7 +405,7 @@ func (scheduler *Scheduler) getCoreIndex() int {
+ 	return -1
+ }
+ 
+-func (scheduler *Scheduler) getCore() (uint, error) {
++func (scheduler *Scheduler) getCore() (int, error) {
+ 	index := scheduler.getCoreIndex()
+ 	if index == -1 {
+ 		return 0, common.WrapWithNFError(nil, "Requested number of cores isn't enough. System needs at least one core per each Set function (except Merger and Stopper) plus one additional core.", common.NotEnoughCores)

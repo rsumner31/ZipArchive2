@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Intel Products" />
+    <meta name="author"      content="Intel Corporation" />
+    <meta name="keywords"    content="Intel" />
+    <meta name="robots"      content="noindex, nofollow" />
+
+    <meta http-equiv="expires"      content="0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link type="image/vnd.microsoft.icon" href="https://registrationcenter.intel.com/Includes/images/favicon.ico" rel="icon">
+    <link type="image/vnd.microsoft.icon" href="https://registrationcenter.intel.com/Includes/images/favicon.ico" rel="shortcut icon">
+
+    <title>Download Intel&#174; Distribution for Python - Intel® Products</title>
+
+    <link href="/styles/css?v=y56j2dEcpxk-enttUXVELRk3-KRnB17-zMKQqFxz7rE1" rel="stylesheet"/>
+
+    <!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PZRG3F"
+            height="0" width="0" style="display:none; visibility:hidden"></iframe>
+</noscript>
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start': new Date().getTime(),
+            event      : 'gtm.js'
+        });
+
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PZRG3F');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Corporate Google Analytics -->
+<script type="text/javascript">
+    //configure analytics
+    var wapLocalCode = 'us-en'; //dynamically set per localized site
+
+    //load analytics
+    (function () {
+        var host = (window.document.location.protocol == 'http:') ? "http://www.intel.com" : "https://www-ssl.intel.com";
+        var url  = host + "/content/dam/www/global/wap/wap-registration-center.js"; //wap file url
+        var po   = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = url;
+        var s    = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<!-- End Corporate Google Analytics -->
+
+<!-- Hotjar Tracking Code -->
+<script>
+    (function (h, o, t, j, a, r) {
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+        h._hjSettings = { hjid: 321718, hjsv: 5 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+</script>
+<!-- END Hotjar Tracking Code -->
+
+</head>
+<body>
+    <!-- ************* DO NOT ALTER ANYTHING BELOW THIS LINE ! ************** -->
+    <!-- language selection script -->
+    <script type="text/javascript">
+        INTELNAV = window.INTELNAV || {};
+        INTELNAV.dashboard = {
+            languageSelector: {
+                settings: {
+                    behavior: "mineOnly",
+                    method:   "path",
+                    regex:    /^\/((\w{2}(-\w{2})?)(\/|$))?/
+                },
+                geos: [
+                    { geo: "en_us", path: "/en/" },
+                    { geo: "ja_jp", path: "/ja/" },
+                    { geo: "ko_kr", path: "/ko/" },
+                    { geo: "ru_ru", path: "/ru/" },
+                    { geo: "zh_cn", path: "/zh/" }
+                ]
+            }
+        };
+    </script>
+
+    <!--IGHF (Performance tweaks for Mobile and Slow connections)-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://www.intel.com" pr="1.0">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" pr="1.0">
+    <link rel="preconnect"   href="https://www.intel.com" crossorigin="anonymous" pr="1.0">
+    <link rel="preconnect"   href="https://www.google-analytics.com" crossorigin="anonymous" pr="1.0">
+    <!--/IGHF-->
+
+    <!--IGHF Loader-->
+    <script type="text/javascript" src="https://www.intel.com/ighf/50recode.2/js/headerchooser.js" ASYNC DEFER></script>
+    <script>
+        INTELNAV = window.INTELNAV ||
+        {}; INTELNAV.renderSettings={
+            version:"2.0 - 03/12/2017 08:00:00",
+            textDirection:"--",
+            culture:"--",
+            OutputId:"--"};
+    </script>
+    <!--/IGHF Loader-->
+
+    <!--IGHF header-->
+    <!--GAATversion='50recode.2' date='03/12/2017 08:00:00' Version='2.0':CharacterEncoding:utf8-->
+    <div id="recode50header"></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        INTELNAV = window.INTELNAV || {};
+        INTELNAV.renderSettings={
+            version:"2.0 - 03/12/2017 08:00:00",
+            textDirection:"ltr",
+            culture:"en_US",
+            OutputId:"gh_default"};
+        /*]]>*/
+    </script>
+
+    <noscript>
+        <link rel="stylesheet" href="https://www.intel.com/ighf/50recode.2/css/ltr_nojsheader.css" type="text/css">
+        <div id="smallfootprint-header">
+            <a href="https://www.intel.com/content/www/us/en/homepage.html" class="gaat40-logo" title="Logo - Intel"></a>
+            <form method="get" id="user-bar-searchboxform" name="user-bar-searchbox-form" action="https://www.intel.com/content/www/us/en/search.html">
+                <fieldset>
+                    <legend></legend>
+                    <label for="input-search">Search</label>
+                    <input type="text" id="input-search" name="keyword" />
+                    <input type="submit" id="input-submit" name="input-submit" value="Search" />
+                </fieldset>
+            </form>
+        </div>
+    </noscript>
+    <!--/IGHF header-->
+    <!-- ************* CONTENT BELOW THIS LINE CAN BE CHANGED ************** -->
+
+    <div class="container body-content">
+        
+            <div class="row row-height-equalize">
+                <div class="col-xs-8 col-height-equalize col-height-equalize-left">
+                    
+
+
+<div class="page-header">
+    <h1 class="product-name">
+        <span>Intel&#174; Distribution for Python</span>
+    </h1>
+        <h3 class="product-version">2018</h3>
+</div>
+
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object boxshot-full" src="https://registrationcenter.intel.com/Includes/images/boxshots/bs_python.png">
+            </a>
+        </div>
+        <div class="media-body">
+            <div class="boxshot-text">
+
+                <p>Your registration for the <strong>Intel® Distribution for Python</strong> has been approved.  You will receive an email with download instructions for future reference.</p>
+            
+                        <p>
+                            <strong>Serial number :  <span class="serial-number">CR5K-XD46PLKJ</span></strong><br />
+                        </p>
+                        <div class="info-message">
+                            <ul><li>Save this serial number. You may need it to activate your product in the installer.</li><li>For your reference, you will receive an email that includes your serial number and download instructions.</li></ul>
+
+
+                        </div>
+                        <div id="product_list">
+                            <strong>Choose a Product</strong>
+                            <br />
+                            <select class="form-control input-sm">
+                                    <option title="Intel&#174; Distribution for Python for Linux*" value="3129">Intel&#174; Distribution for Python for Linux*</option>
+                                    <option title="Intel&#174; Distribution for Python for macOS*" value="3205">Intel&#174; Distribution for Python for macOS*</option>
+                                    <option title="Intel&#174; Distribution for Python for Windows*" value="3169">Intel&#174; Distribution for Python for Windows*</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div id="product_downloads">
+                            <div id="productDownload">
+    <div id="productLoading" class="well">
+        <span>
+            <img src="/Includes/images/indicator.gif" alt="" /> Please wait...
+        </span>
+    </div>
+        <div id="version_list" class="hidden">
+            <strong>Choose a Version</strong>
+            <br />
+            <select class="form-control form-control-width-auto input-sm">
+                        <option title="" value="12430">2018 Update 1 </option>
+                        <option title="" value="12106">2018 Initial Release </option>
+                        <option title="" value="11602">2017 Update 3 </option>
+                        <option title="" value="11326">2017 Update 2 </option>
+                        <option title="" value="11021">2017 Update 1 </option>
+                        <option title="" value="9731">2017 Initial Release </option>
+            </select>
+        </div>
+            <div id="dnld_12430" class="hidden">
+            Build date: 10 Nov 2017<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_12430" class="">
+                                    <p>
+                                            <a id="file_51107" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12430/l_python2_pu_2018.1.023.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        940 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_51113" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12430/l_python3_pu_2018.1.023.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.6 for Linux*</a>
+                                        947 MB
+                                    </p>
+                                                                                </div>
+                    </div>
+                </div>
+        </div>
+        <div id="dnld_12106" class="hidden">
+            Build date: 12 Oct 2017<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_12106" class="">
+                                    <p>
+                                            <a id="file_50601" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12106/l_python2_p_2018.0.022.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        923 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_50602" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/12106/l_python3_p_2018.0.022.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.6 for Linux*</a>
+                                        931 MB
+                                    </p>
+                                                                                </div>
+                    </div>
+                </div>
+        </div>
+        <div id="dnld_11602" class="hidden">
+            Build date: 09 May 2017<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-2017-update-3-readme" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_11602" class="">
+                                    <p>
+                                            <a id="file_47306" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11602/l_python2_pu3_2017.3.053.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        826 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_47307" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11602/l_python3_pu3_2017.3.052.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.5 for Linux*</a>
+                                        823 MB
+                                    </p>
+                                                                                </div>
+                    </div>
+                </div>
+        </div>
+        <div id="dnld_11326" class="hidden">
+            Build date: 13 Feb 2017<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-2017-update-2-readme" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_11326" class="">
+                                    <p>
+                                            <a id="file_46286" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11326/l_python2_pu2_2017.2.045.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        790 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_46287" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11326/l_python3_pu2_2017.2.045.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.5 for Linux*</a>
+                                        784 MB
+                                    </p>
+                                                                                </div>
+                    </div>
+                </div>
+        </div>
+        <div id="dnld_11021" class="hidden">
+            Build date: 21 Oct 2016<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-2017-update-1-readme" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_11021" class="">
+                                    <p>
+                                            <a id="file_44912" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11021/l_python27_pu_2017.0.035.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        671 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_44913" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/11021/l_python35_pu_2017.0.035.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.5 for Linux*</a>
+                                        670 MB
+                                    </p>
+                                                                                </div>
+                    </div>
+                </div>
+        </div>
+        <div id="dnld_9731" class="hidden">
+            Build date: 16 Aug 2016<br />
+                <div class="horLinkMenu">
+                    <ul>
+                            <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-release-notes" target="_blank">Release Notes</a>
+                            </li>
+                                                    <li>
+                                <a href="https://software.intel.com/en-us/articles/intel-distribution-for-python-2017-initial-release-readme" target="_blank">ReadMe</a>
+                            </li>
+                                            </ul>
+                </div>
+                <br />
+                <strong>Choose a Download Option</strong>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="dnld_panel_9731" class="">
+                                    <p>
+                                            <a id="file_42655" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/9731/l_python27_p_2017.0.028.tgz" target="_blank" onclick=" downloadCount(this) ">Python 2.7 for Linux*</a>
+                                        703 MB
+                                    </p>
+                                    <p>
+                                            <a id="file_42656" class="btn btn-primary btn-download" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/9731/l_python35_p_2017.0.028.tgz" target="_blank" onclick=" downloadCount(this) ">Python 3.5 for Linux*</a>
+                                        701 MB
+                                    </p>
+                                                            <a id="collapse_link_9731" href="#collapse_9731" data-toggle="collapse">Related downloads <span class="small glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+                                <div id="collapse_9731" class="collapse">
+                                    <ul class="list-unstyled list-unstyled-with-padding">
+                                            <li>
+                                                <a id="file_42657" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/9731/Release%20Notes%20Intel%28R%29%20Distribution%20for%20Python%20-%202017.pdf" target="_blank" onclick="downloadCount(this)"><small> Release Notes</small></a>
+                                                <small>557 KB</small>
+                                            </li>
+                                    </ul>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+        </div>
+</div>
+
+<input data-val="true" data-val-number="The field ID must be a number." data-val-required="The ID field is required." id="ProductInfo_ID" name="ProductInfo.ID" type="hidden" value="3129" />
+<input id="SelectedDownloadId" name="SelectedDownloadId" type="hidden" value="12430" />
+<input data-val="true" data-val-required="The UrlRefresh field is required." id="UrlRefresh" name="UrlRefresh" type="hidden" value="False" />
+
+<script>
+    var tid;
+    var reloadInterval = 1140000;
+    window.onload = function () {
+        if ($("#UrlRefresh").val() === "True") {
+            tid = setTimeout(refreshURL, reloadInterval);
+        }
+
+        initDownloadProduct();
+    }
+
+    function initDownloadProduct() {
+        $("#productLoading").addClass("hidden");
+
+        $('[data-toggle="popover"]').popover();
+
+        $('#version_list select').val($("#SelectedDownloadId").val());
+        $("#version_list").toggleClass("hidden");
+        $("#dnld_" + $("#SelectedDownloadId").val()).toggleClass("hidden");
+
+        $('#version_list select').on('change', function () {
+            var curRecord = $("#SelectedDownloadId").val();
+            $("#dnld_" + curRecord).toggleClass("hidden");
+            $("#dnld_" + this.value).toggleClass("hidden");
+            $("#SelectedDownloadId").val(this.value);
+        });
+
+        $("[id^=collapse_link]").click(function (e) {
+            $(this).find(".glyphicon").toggleClass("glyphicon-triangle-bottom glyphicon-triangle-right");
+        });
+
+        $("[id^=collapse_desc_link]").click(function (e) {
+            $(this).find(".glyphicon").toggleClass("glyphicon-triangle-bottom glyphicon-triangle-right");
+        });
+
+        $("[id^=gdpr_]").change(function () {
+            var curRecord = $("#SelectedDownloadId").val();
+            $("#checkboxDesc_" + curRecord).toggleClass("hidden");
+            $("#dnld_panel_" + curRecord).toggleClass("hidden");
+            recordGDPRConsent(curRecord, this.checked);
+        });
+    }
+
+    function recordGDPRConsent(record, value) {
+        $.ajax({
+            type: "POST",
+            url: "/en/products/recordgdprconsent/",
+            data: { id: record , consent: value }
+        });
+    }
+
+    function downloadCount(e) {
+        $.ajax({
+            type: "POST",
+            url: "/en/products/downloadcount/",
+            data: { id: e.id.split("_")[1] }
+        });
+
+        if (typeof _elq != 'undefined') {
+            _elq.trackOutboundLink(e);
+        }
+    }
+
+    function refreshURL() {
+        clearTimeout(tid);
+        $.ajax({
+            type: "GET",
+            url: "/en/products/download/",
+            data: { "recordId": $("#SelectedDownloadId").val() },
+            beforeSend: function () {
+            },
+            success: function (data) {
+                $("#productDownload").html(data);
+                initDownloadProduct();
+                if ($("#UrlRefresh").val() === "True") {
+                    tid = setTimeout(refreshURL, reloadInterval);
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                tid = setTimeout(refreshURL, reloadInterval);
+            }
+        });
+    }
+
+</script>
+
+<style>
+    .horLinkMenu ul {
+        list-style: none;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .horLinkMenu ul li {
+            display: inline;
+        }
+
+    .horLinkMenu li + li {
+        border-left: 1px solid;
+        margin-left: 0.5em;
+        padding-left: 0.5em;
+    }
+
+    .btn-download {
+        width: 400px !important;
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+
+    .list-unstyled-with-padding {
+        padding-left: 15px !important;
+    }
+
+        .list-unstyled-with-padding li {
+            padding-top: 5px !important;
+        }
+
+    p:last-child {
+        margin: 0 0 0 0;
+    }
+
+    .form-control-width-auto {
+        width: auto !important;
+    }
+</style>
+
+                        </div>
+                    <div>
+                            <p>Access your support resources. <a tabindex="1" href="http://www.intel.com/software/products/support" target="_blank">Click here</a> for technical support.</p>
+                        <p>
+                            Intel takes your privacy seriously.  Refer to Intel's <a href="http://www.intel.com/privacy" target="_blank">Privacy Notice</a> and <a href="http://software.intel.com/en-us/articles/serial-number-validation-notice" target="_blank">Serial Number Validation Notice</a> regarding the collection and handling of your personal information, the Intel product’s serial number and other information.
+                        </p>
+                        <br />
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div>
+<div class="panel-footer">
+    <small>
+        <em>
+            This software is subject to the U.S. Export Administration Regulations and other U.S. law, and may not be exported or re-exported to certain countries ( Cuba, Iran, North Korea, Sudan, Syria, and the Crimea region of Ukraine) or to persons or entities prohibited from receiving U.S. exports (including Denied Parties, Specially Designated Nationals, and entities on the Bureau of Export Administration Entity List or involved with missile technology or nuclear, chemical or biological weapons).
+        </em>
+    </small>
+</div>
+    </div>
+
+<script>
+    var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '334284386']);
+    _elqQ.push(['elqTrackPageView']);
+
+    var _elqPixelTracking = false;
+
+    window.onload = function () {
+   
+                async_load();
+                _elqPixelTracking = true;
+            
+
+        initPackageProducts();
+        if (typeof initDownloadProduct == 'function') {
+            initDownloadProduct();
+        }
+    }
+
+    function adPixelDownloadTrigger() {
+        var script = document.createElement('script');
+        script.src = 'https://i.simpli.fi/dpx.js?cid=99375&conversion=20&campaign_id=0&m=1&sifi_tuid=57546';
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+    }
+
+    function async_load() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//img.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    }
+
+    function initPackageProducts() {
+        $('#product_list select').on('change', function () {
+            var curProduct = $("#product_list select").val();
+            $('#product_list select').prop('disabled', true);
+            $("#productLoading").removeClass("hidden");
+            $("#version_list").toggleClass("hidden");
+            $("#dnld_" + $("#SelectedDownloadId").val()).toggleClass("hidden");
+            $("#product_downloads").load('/en/products/download//' + curProduct + "?upg=n&ret=n", function () {
+                initDownloadProduct();
+                $('#product_list select').prop('disabled', false);
+            });
+        });
+    }
+</script>
+<style>
+    .media, .media-body {
+        overflow: visible !important;
+    }
+
+    .boxshot-full {
+        margin-left: -230px !important;
+        width: 460px;
+        height: 300px;
+    }
+
+    .boxshot-text {
+        margin-left: -105px !important;
+    }
+
+    .product-name {
+        margin-bottom: 5px !important;
+    }
+    .product-version {
+        margin-top: 5px !important;
+    }
+
+    .info-message {
+        padding: 15px;
+        background-color: WhiteSmoke;
+        border-left: 4px solid orange;
+        margin-bottom: 15px;
+    }
+
+    .info-message ul {
+        list-style-position: inside;
+        padding-left:0;
+    }
+
+    .info-message ul li {
+        display: table-row;
+    }
+
+    .info-message ul li::before {
+        content: "•";
+        display: table-cell;
+        padding-right: 0.4em;
+    }
+</style>
+                </div>
+                <div class="col-xs-4 col-height-equalize col-height-equalize-right">
+                    
+<div id="rightPanel" class="right-panel accordion-panel panel-group">
+    <div class="title">
+        <p>
+            <a href="/en/products/">
+                Intel&#174; Products
+            </a>
+        </p>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#rightPanel" href="#collapseLoginMenu">
+                    <p class="arrow-up arrow-up-active">
+
+                        My Profile <small></small>
+                    </p>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseLoginMenu" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <ul>
+                        <li>
+                            <a href="/en/auth/globallogin/" id="loginLink">Sign In</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#rightPanel" href="#collapseResources">
+                    <p class="arrow-up">
+                        Resources
+                    </p>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseResources" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul>
+                    <li>
+                        <a class="bg-arrow" href="http://software.intel.com/en-us/forum" target="_blank"
+                           title="Connect with Intel experts and other developers using Intel® Software Development Products.">
+                            Developer Zone
+                        </a>
+                    </li>
+                    <li>
+                        <a class="bg-arrow invisible-default" href="http://supportcontact.intel.com/guide-me-ss/index.html?topicId=700100000004951&amp;lang=en-US" target="_blank"
+                           title="Get step-by-step solutions and troubleshooting tips from the Guide Me tool.">
+                            Guide Me Tool
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#rightPanel" href="#collapseQuestions">
+                        <p class="arrow-up">
+                            Questions &amp; Answers
+                        </p>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseQuestions" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul>
+                            <li><a class="bg-arrow" href="http://software.intel.com/en-us/articles/buy-or-renew/" target="_blank">How can I buy or renew?</a></li>
+                            <li><a class="bg-arrow" href="http://software.intel.com/en-us/articles/find-my-serial-number" target="_blank">Where can I find my serial number?</a></li>
+                            <li><a class="bg-arrow" href="http://software.intel.com/en-us/articles/change--serverhost-data-node-locked-or-floating-license" target="_blank">How do I change floating license host/server info?</a></li>
+                            <li><a class="bg-arrow" href="http://software.intel.com/en-us/articles/transfer-a-single-user-license-to-another-user-or-email-address" target="_blank">Transfer a license to another user</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+                </div>
+            </div>
+    </div>
+
+
+    <!-- ************* DO NOT ALTER ANYTHING BELOW THIS LINE ! ************** -->
+    <!--IGHF footer-->
+    <!--GAATversion='50recode.2' date='03/12/2017 08:00:00' Version='2.0':CharacterEncoding:utf8-->
+    <div id="recode50footer"> </div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        INTELNAV = window.INTELNAV || {};
+        INTELNAV.renderSettingsFooter={version:"2.0 - 03/12/2017 08:00:00",OutputId:"gf_default"};
+        /*]]>*/
+    </script>
+
+    <noscript>
+        <div id="smallfootprint-footer">
+            <ul>
+                <li>©Intel Corporation</li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html" target="">Terms of Use</a>
+                </li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/legal/trademarks.html" target="">*Trademarks</a>
+                </li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/privacy/intel-privacynotice.html" target="">Privacy</a>
+                </li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/privacy/intel-cookienotice.html" target="">Cookies</a>
+                </li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/policy/policy-humantrafficking-and-slavery.html" target="">Supply Chain Transparency</a>
+                </li>
+                <li>
+                    <a href="https://www.intel.com/content/www/us/en/siteindex.html" target="">Site Map</a>
+                </li>
+            </ul>
+        </div>
+    </noscript>
+    <!--/IGHF footer-->
+    <!-- ************* CONTENT BELOW THIS LINE CAN BE CHANGED ************** -->
+
+    <script src="/scripts/ems?v=FPRuwoFRI98qRH39vgU_sSn-x7GpVBFKyCUtF_rw_0Q1"></script>
+
+    
+</body>
+</html>
